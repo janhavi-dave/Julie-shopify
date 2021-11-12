@@ -1,0 +1,434 @@
+{%- assign related_product_limit_count = section.settings.related_product_limit_handle -%}
+{%- assign related_product_limit = related_product_limit_count | plus: 1 -%}
+
+{%- if collection == null or collection.handle == 'frontpage' or collection.handle == 'all' -%}
+{%- assign found_a_collection = false -%}
+{%- for c in product.collections -%}
+
+{%- if found_a_collection == false and c.handle != 'frontpage' and c.handle != 'all' and c.all_products_count > 1 -%}
+{%- assign found_a_collection = true -%}
+{%- assign collection = c -%}
+{%- endif -%}
+
+{%- endfor -%}
+{%- endif -%}
+
+{%- if collection and collection.products_count > 1 and section.settings.related_products_enable -%}
+
+<div class="product-area pb-70 common_slick_slider related_product_area" id="section-{{ section.id }}" data-section="Related_Products">
+  
+  
+      {%- capture data_slick_activation -%}
+      data-slick='{
+
+      "infinite": true,
+      "slidesToShow": {{section.settings.product_column_handle}},
+      "slidesToScroll": 1,
+      "rows":{{ section.settings.product_casoule_row }},
+
+      {% if section.settings.tab_arsoule_arrow_enable %}
+      "arrows": true,
+      "prevArrow": "<span class=&#x27;product-dec-icon product-dec-prev&#x27;><i class=&#x27;sli sli-arrow-left&#x27;></i></span>",
+      "nextArrow": "<span class=&#x27;product-dec-icon product-dec-next&#x27;><i class=&#x27;sli sli-arrow-right&#x27;></i></span>",
+      {%else%}
+      "arrows": false,
+      {%endif%}
+
+      "responsive": [
+
+      {
+      "breakpoint": 1800,
+      "settings": {
+      "slidesToShow": {{section.settings.product_column_handle_md}},
+      "slidesToScroll": 1
+      }
+      },
+      {
+      "breakpoint": 1200,
+      "settings": {
+      "slidesToShow": {{section.settings.product_column_handle_sm}},
+      "slidesToScroll": 1
+      }
+      },
+      {
+      "breakpoint": 991,
+      "settings": {
+      "slidesToShow": {{section.settings.product_column_handle_sm_2}},
+      "slidesToScroll": 1
+      }
+      },
+      {
+      "breakpoint": 767,
+      "settings": {
+      "slidesToShow": {{section.settings.product_column_handle_xs}},
+      "slidesToScroll": 1
+      }
+      },
+      {
+      "breakpoint": 450,
+      "settings": {
+      "slidesToShow": 1,
+      "slidesToScroll": 1
+      }
+      }
+      ]
+
+
+      }'
+      {%- endcapture -%}
+  
+  
+  
+  
+  <div class="container">
+    {% if section.settings.section_title != '' or section.settings.section_sub_title != '' %}
+    <div class="section-title {{ section.settings.title_align }} pb-60">
+      {% if section.settings.section_title != '' %}
+      <h2>{{ section.settings.section_title }}</h2>
+      {% endif %}
+
+      {% if section.settings.section_sub_title != '' %}
+      <p>{{ section.settings.section_sub_title }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="ht-products {% if section.settings.tab_arsoule_active %} related-feature-product-slider-active carsoule_arrow_style{% endif %} row" {{ data_slick_activation }}>
+      {%- assign current_product = product -%}
+      {%- assign current_product_found = false -%}
+      {%- for product in collection.products limit: related_product_limit -%}
+
+
+      {%- if product.handle == current_product.handle -%}
+      {%- assign current_product_found = true -%}
+      {%- else -%}
+      {%- unless current_product_found == false and forloop.last -%}      
+      <div class="{% if section.settings.tab_arsoule_active %}col-md-12 {% else %} col-xl-{{ section.settings.product_column_handle }} col-lg-{{ section.settings.product_column_handle_md }} col-md-{{ section.settings.product_column_handle_sm }} col-sm-{{ section.settings.product_column_handle_sm_2 }} col-12 {% endif %}">
+        {% include 'product-grid-item' %}
+      </div>
+      {%- endunless -%}
+      {%- endif -%}
+
+      {%- endfor -%}
+
+    </div>
+  </div>
+</div>
+
+
+
+  {% if section.settings.section_title_custom_color %}
+  <style>
+    #section-{{ section.id }} .section-title h2{
+      color: {{ section.settings.section_title_color }};
+      font-size:{{ section.settings.section_title_font_size }}px;
+    }
+
+    #section-{{ section.id }} .section-title p{
+      color: {{ section.settings.section_subtitle_color }};
+      font-size:{{ section.settings.section_des_font_size }}px;
+    }
+  </style>
+  {% endif %}
+
+
+
+
+
+{%- endif -%}
+
+
+
+
+{% schema %}
+  {
+    "name": "Related Product",
+    "settings": [
+		{
+            "type": "checkbox",
+            "id": "related_products_enable",
+            "label": "Show Related Product",
+            "default": true
+        },
+		{
+			"type": "header",
+            "content": "Section Title"
+        },
+
+		{
+            "type": "text",
+            "id": "section_title",
+            "label": "Title",
+            "default": "New Arrivals"
+        },
+		{
+            "type": "textarea",
+            "id": "section_sub_title",
+            "label": "Subtitle",
+            "default": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical"
+        },
+        {
+          "type": "checkbox",
+          "id": "section_title_custom_color",
+          "label": "Section Title Color Enable",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "section_title_color",
+          "label": "Title Color",
+          "default": "#1f2226"
+        },
+        {
+          "type": "color",
+          "id": "section_subtitle_color",
+          "label": "Subtitle Color",
+          "default": "#5a5a5a"
+        },			
+		{
+                "type": "select",
+                "id": "title_align",
+                "label": "Title Align",
+                "options":[
+                      {
+                          "label": "Text Left",
+                          "value": "text-left"
+                      },
+                      {
+                          "label": "Text Center",
+                          "value": "text-center"
+                      },
+                      {
+                          "label": "Text Right",
+                          "value": "text-right"
+                      }
+                  ],
+                  "default": "text-center"
+              },        
+              {
+                "type": "text",
+                "id": "section_title_font_size",
+                "label": "Font Size: Font Size",
+                "default": "30",
+                "info": "Section Title Font Size"
+              },              
+			  {
+                "type": "text",
+                "id": "section_des_font_size",
+                "label": "Font Size: Font Size",
+                "default": "14",
+                "info": "Section Description Font Size"
+              },{
+                "type": "checkbox",
+                "id": "tab_arsoule_active",
+                "label": "Active Carsoule",
+                "default": true
+            },
+            {
+                "type": "checkbox",
+                "id": "tab_arsoule_arrow_enable",
+                "label": "Carsoule Arrow Enable",
+                "default": true
+            },
+            {
+              "type": "range",
+              "id": "related_product_limit_handle",
+              "min": 1,
+              "max": 20,
+              "step": 1,
+              "label": "Product Limit",
+              "default": 10
+            },
+            {
+                "type": "range",
+                "id": "product_casoule_row",
+                "min": 1,
+                "max": 10,
+                "step": 1,
+                "label": "Product Carsoule Row",
+                "default": 1
+            },
+            {
+              "type": "select",
+              "id": "product_column_handle",
+              "label": "Product Column",			  
+			  "info":"Carsoule Screen Size: 1920px",
+              "options":[
+                    {
+                        "label": "1",
+                        "value": "1"
+                    },
+                    {
+                        "label": "2",
+                        "value": "2"
+                    },
+                    {
+                        "label": "3",
+                        "value": "3"
+                    },
+                    {
+                        "label": "4",
+                        "value": "4"
+                    },
+                    {
+                        "label": "5",
+                        "value": "5"
+                    },
+                    {
+                        "label": "6",
+                        "value": "6"
+                    }
+                ],
+                "default": "3"
+            },
+            {
+              "type": "select",
+              "id": "product_column_handle_md",
+              "label": "Product Column (Medium)",
+			  "info":"Carsoule Screen Size: 1800px",
+              "options":[
+                    {
+                        "label": "1",
+                        "value": "1"
+                    },
+                    {
+                        "label": "2",
+                        "value": "2"
+                    },
+                    {
+                        "label": "3",
+                        "value": "3"
+                    },
+                    {
+                        "label": "4",
+                        "value": "4"
+                    },
+                    {
+                        "label": "5",
+                        "value": "5"
+                    },
+                    {
+                        "label": "6",
+                        "value": "6"
+                    }
+                ],
+                "default": "4"
+            },
+            {
+              "type": "select",
+              "id": "product_column_handle_sm",
+              "label": "Product Column (Tablet)",
+			  "info":"Carsoule Screen Size: 1200px",
+              "options":[
+                    {
+                        "label": "1",
+                        "value": "1"
+                    },
+                    {
+                        "label": "2",
+                        "value": "2"
+                    },
+                    {
+                        "label": "3",
+                        "value": "3"
+                    },
+                    {
+                        "label": "4",
+                        "value": "4"
+                    },
+                    {
+                        "label": "5",
+                        "value": "5"
+                    },
+                    {
+                        "label": "6",
+                        "value": "6"
+                    },
+                    {
+                        "label": "12",
+                        "value": "12"
+                    }
+                ],
+                "default": "6"
+            },
+            {
+              "type": "select",
+              "id": "product_column_handle_sm_2",
+              "label": "Product Column (Mini Tab)",
+			  "info":"Carsoule Screen Size: 991px",
+              "options":[
+                    {
+                        "label": "1",
+                        "value": "1"
+                    },
+                    {
+                        "label": "2",
+                        "value": "2"
+                    },
+                    {
+                        "label": "3",
+                        "value": "3"
+                    },
+                    {
+                        "label": "4",
+                        "value": "4"
+                    },
+                    {
+                        "label": "5",
+                        "value": "5"
+                    },
+                    {
+                        "label": "6",
+                        "value": "6"
+                    },
+                    {
+                        "label": "12",
+                        "value": "12"
+                    }
+                ],
+                "default": "2"
+            },
+            {
+                "type": "header",
+                "content": "Work Only Active Carsoule"
+            },
+            {
+              "type": "select",
+              "id": "product_column_handle_xs",
+              "label": "Product Column (Mobile)",
+			  "info":"Carsoule Screen Size: 767px",
+              "options":[
+                    {
+                        "label": "1",
+                        "value": "1"
+                    },
+                    {
+                        "label": "2",
+                        "value": "2"
+                    },
+                    {
+                        "label": "3",
+                        "value": "3"
+                    },
+                    {
+                        "label": "4",
+                        "value": "4"
+                    },
+                    {
+                        "label": "5",
+                        "value": "5"
+                    },
+                    {
+                        "label": "6",
+                        "value": "6"
+                    }
+                ],
+                "default": "2"
+            }
+	]
+  }
+{% endschema %}
+
+
+
+

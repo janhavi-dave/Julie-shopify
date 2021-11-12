@@ -1,0 +1,68 @@
+<div class="{{ variant.id }} shop-list-wrap shop-list-mrg mb-30 ht-product-countdown-fill">
+  <div class="row">
+    <div class="col-lg-4 col-md-5">
+      <div class="product-list-img">
+        <a href="{{ item.url | within: collection }}"> 
+          <img class="popup_cart_image" src="{{ item.featured_image.src | img_url: 'large' }}" alt="{{ item.featured_image.alt }}">
+        </a>
+        {%- if item.description contains '[countdown]' -%}
+        {%- assign count_down_first = item.description | split:'[/countdown]' | first -%}
+        {%- assign count_down_final = count_down_first | split:'[countdown]' | last -%}
+        <div class="ht-product-countdown-wrap">
+          <div class="ht-product-countdown" data-countdown="{{ count_down_final }}"></div>
+        </div>
+        {%- endif -%}
+        {%- if settings.product_quickview_enalbe -%}
+        <div class="product-quickview">          
+          <a href="javascript:void(0);" 
+             onclick="quiqview('{{ item.handle | handleize }}')"
+             data-toggle="modal" 
+             data-target="#exampleModal">
+            <i class="sli sli-magnifier-add"></i>
+          </a>
+        </div>
+        {%- endif -%}
+        {%- if settings.show_product_badge -%}
+        {%- include 'product-badge-search-grid' -%}
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="col-lg-8 col-md-7 align-self-center">
+      <div class="row">
+        <div class="col-lg-7 col-md-12">
+          <div class="shop-list-content">
+            <h3 class="popup_cart_title"><a href="{{ item.url | within: collection }}">{{ item.title }}</a></h3>
+            {%- if settings.show_product_type -%}
+            <span>{{ item.type }}</span>
+            {%- endif -%}
+            <div class="ht-product-list-price">
+              <span class="new">{{ item.variants.first.price | money }}</span>
+              {%- if item.variants.first.compare_at_price > item.variants.first.price -%}
+              <span class="old">{{ item.variants.first.compare_at_price | money }}</span>
+              {%- endif -%}
+            </div>
+            {%- if settings.show_product_review -%}
+            <div class="ht-product-list-ratting spr-badge-caption-none">
+              <span class="shopify-product-reviews-badge" data-id="{{ item.id }}"></span>
+            </div>
+            {%- endif -%}
+            {%- include 'product-search-list-action' -%}
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-12">
+          <div class="shop-list-paragraph">
+            {%- if item.description contains '[short_description]' -%}            
+            {%- assign short_description_first = item.description | split:'[/short_description]' | first -%}
+            {%- assign short_description_final = short_description_first | split:'[short_description]' | last -%}
+            {{ short_description_final }}
+            {%- else -%}
+            <p>
+              {{ item.description | split: '[info_1]' | first | split: '[info_2]' | first | split: '[info_3]' | first | split: '[info_4]' | first | split: '[info_5]' | first | split: '[info_6]' | first | split: '[info_7]' | first | split: '[info_8]' | first | split: '[info_9]' | first | split: '[info_10]' | first | split: '[countdown]' | first | split: '[affiliate_link]' | first | split: '[product_video]' | first | split: '[short_description]' | first | split: '[product_description]' | first | split: '[more_info]' | first }}
+            </p>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

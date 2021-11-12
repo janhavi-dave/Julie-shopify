@@ -1,0 +1,59 @@
+{%- assign on_sale = false -%}{%- if product.variants.first.compare_at_price > product.variants.first.price -%}{%- assign on_sale = true -%}{%- endif -%}
+{%- assign sold_out = true -%}{%- if product.available -%}{%- assign sold_out = false -%}{%- endif -%}
+{%- assign variant = product.selected_or_first_available_variant -%}
+{%- if product.available -%}{%- assign func = "Shopify.addItem(" | append: variant.id | append: ", 1)" -%}{%- endif -%}
+
+<div class="{{ variant.id }} ht-product ht-product-action-on-hover mb-30 
+            {% if settings.product_action_pos == 'right' %} ht-product-action-right
+            {% elsif settings.product_action_pos == 'bottom' %} ht-product-action-bottom
+            {% elsif settings.product_action_pos == 'center' %} ht-product-action-middle
+            {% elsif settings.product_action_pos == 'b_content' %} ht-product-action-bottom-content
+            {% endif %}
+            {% if settings.p_count_style == 'style_2' %} ht-product-countdown-fill{% endif %}
+            {% if settings.p_count_pos == 'left' %} ht-product-countdown-left
+            {% elsif settings.p_count_pos == 'right' %} ht-product-countdown-right
+            {% elsif settings.p_count_pos == 'bottom' %} ht-product-countdown-bottom
+            {% elsif settings.p_count_pos == 'center' %} ht-product-countdown-middle
+            {% elsif settings.p_count_pos == 'b_content' %} ht-product-countdown-content-bottom{% endif %}">
+  <div class="ht-product-inner">
+    <div class="ht-product-image-wrap">
+      {%- if settings.show_product_badge -%}
+      {%- include 'product-badge' -%}
+      {%- endif -%}
+      <a href="{{ product.url | within: collection }}" class="ht-product-image"> 
+        <img class="popup_cart_image" src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt }}">
+      </a>
+      {%- unless settings.p_count_pos == 'b_content' -%}
+      {%- include 'product-countdown' -%}
+      {%- endunless -%}   
+      {%- include 'product-action-grid' -%}
+    </div>
+    <div class="ht-product-content">
+      <div class="ht-product-content-inner {{ p_content_align }}">
+        {%- if settings.show_product_type -%}
+        <div class="ht-product-categories {{ p_content_align }}">
+          <a href="#" class="remove_href">{{ product.type }}</a>
+        </div>
+        {%- endif -%}
+        <h4 class="ht-product-title popup_cart_title"><a href="{{ product.url | within: collection }}">{{ product.title }}</a></h4>
+        <div class="ht-product-price {{ p_content_align }}">
+          {%- if product.variants.first.compare_at_price > product.variants.first.price -%}
+          <span class="old">{{ product.variants.first.compare_at_price | money }}</span>
+          {%- endif -%}
+          <span class="new">{{ product.variants.first.price | money }}</span>
+        </div>
+        {%- if settings.show_product_review -%}
+        <div class="ht-product-ratting-wrap {{ p_content_align }}">
+          <span class="ht-product-ratting spr-badge-caption-none">
+            <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+          </span>
+        </div>
+        {%- endif -%} 
+      </div>
+      {%- include 'product-action-grid' -%}
+      {%- if settings.p_count_pos == 'b_content' -%}
+      {%- include 'product-countdown' -%}
+      {%- endif -%}
+    </div>
+  </div>
+</div>

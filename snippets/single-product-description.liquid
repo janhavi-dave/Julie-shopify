@@ -1,0 +1,7 @@
+{%- if product.available -%}
+{%- form 'product', product, id: "AddToCartForm", class: "product-content-inner" -%} 
+{%- include 'product-details' -%}
+{%- endform -%}
+{%- else -%}
+{%- include 'product-details' -%}
+{%- endif -%}

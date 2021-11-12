@@ -1,0 +1,220 @@
+<h2 id="popup_cart_title">{{ product.title }}</h2>
+<div class="product-details-price">  
+  <span id="ProductPrice">{{ product.selected_or_first_available_variant.price | money }}</span>
+  {%- if product.compare_at_price_max > product.price -%}
+  <span id="ComparePrice" class="old">{{ product.selected_or_first_available_variant.compare_at_price | money }}</span>
+  {%- endif -%}
+</div>
+
+{%- if settings.show_product_review -%}
+<div class="pro-details-rating-wrap">
+  <div class="pro-details-rating">
+    {%- if settings.review_handle == 'shopify_review' -%}
+    <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+    {%- elsif settings.review_handle == 'ali_review' -%}
+    <div product-id="{{ product.id }}" class="alr-display-review-badge"></div>
+    {%- endif -%}
+  </div>
+</div>
+{%- endif -%}
+
+{%- if current_variant.sku.size > 0 and section.settings.product_sku_enable -%}
+<div class="product-sku pro-details-rating-wrap">{{ section.settings.product_sku_title }} <span class="variant-sku">{{ current_variant.sku }}</span></div>
+{%- endif -%}
+
+
+
+
+{%- if section.settings.product_inventory_enable -%}          
+<script>       
+  var inv_qty = {};
+  {% for var in product.variants %}
+  inv_qty[{{- var.id -}}] = {{ var.inventory_quantity | default: 0 }};
+  {% endfor %}
+</script>            
+{% if current_variant.inventory_management == "shopify" %}
+<div class="product-variant-inventory">
+  <span class="inventory-title">{{ section.settings.availability_title }}</span> <span class="variant-inventory">{{ current_variant.inventory_quantity }} {{ section.settings.left_in_stock_title }}</span>
+</div>
+{% endif %}
+{%- endif -%}
+
+
+
+{%- if product.description contains '[countdown]' -%}
+{%- assign count_down_first = product.description | split:'[/countdown]' | first -%}
+{%- assign count_down_final = count_down_first | split:'[countdown]' | last -%}
+<div class="ht-product-countdown-wrap single-prod-countdown">
+  <div class="ht-product-countdown" data-countdown="{{ count_down_final }}"></div>
+</div>
+{%- endif -%}
+
+
+{%- unless section.settings.product_description_handle == 'without_description' -%}
+{%- if section.settings.product_description_handle == 'full_description' -%}
+{{ product.description | split: '[info_1]' | first | split: '[info_2]' | first | split: '[info_3]' | first | split: '[info_4]' | first | split: '[info_5]' | first | split: '[info_6]' | first | split: '[info_7]' | first | split: '[info_8]' | first | split: '[info_9]' | first | split: '[info_10]' | first | split: '[countdown]' | first | split: '[affiliate_link]' | first | split: '[product_video]' | first | split: '[short_description]' | first | split: '[product_description]' | first | split: '[more_info]' | first }}
+{%- elsif section.settings.product_description_handle == 'short_description' -%}
+<div class="product-description">
+  {%- if product.description contains '[short_description]' -%} 
+  {%- assign short_description_first = product.description | split:'[/short_description]' | first -%}
+  {%- assign short_description_final = short_description_first | split:'[short_description]' | last -%}
+  {{ short_description_final }}
+  {%- else -%}
+  {%- assign truncatewords_count = section.settings.truncatewords_count_handle -%}
+  <p>{{ product.description | truncatewords: truncatewords_count | split: '[short_description]' | first | split: '[product_description]' | first | split: '[new_products]' | first | split: '[product_video]' | first | split: '[affiliate_link]' | first | split: '[countdown]' | first }}</p>
+  {%- endif -%}
+</div>
+{%- endif -%}
+{%- endunless -%}
+
+{%- include 'product-variant' -%}
+
+<div class="pro-details-quality">
+  {%- if product.description contains '[affiliate_link]' -%}
+  {%- include 'affiliate-product-cart-action' -%}
+  {%- else -%}
+  <div class="cart-plus-minus">
+    <input class="cart-plus-minus-box" type="text" name="quantity" value="1">
+  </div>
+
+  {%- include 'product-cart-action' -%}
+
+  
+  
+  
+  {%- if settings.show_product_wishlist -%}
+  <div class="pro-details-wishlist">
+
+    {%- if product.handle != blank -%}
+    <a class="action-wishlist tile-actions--btn flex wishlist-btn wishlist" href="javascript: void(0)" button-wishlist data-product-handle="{{ product.handle }}" data-toggle="tooltip" data-placement="left" title="{{ settings.wishlist_title }}">
+      <span class="add-wishlist"><i class="sli sli-heart"></i></span>
+      <span class="loading-wishlist"><i class="sli sli-heart"></i></span>
+      <span class="remove-wishlist"><i class="sli sli-heart"></i></span>
+    </a>
+    {%- endif -%}
+  </div>
+  {%- endif -%}  
+  
+  
+  
+  
+  
+  
+  {%comment%} 
+
+  {%- if settings.show_product_wishlist -%}
+  <div class="pro-details-wishlist">
+    {%- if customer -%}
+    <a class="wishlist-btn" href="#" data-product-handle="{{ product.handle }}" title="{{ settings.wishlist_t }}"><i class="sli sli-heart"></i></a>
+    {%- else -%}
+    <a class="same-action" href="/account/login" title="{{ settings.wishlist_t }}"><i class="sli sli-heart"></i></a>
+    {%- endif -%}
+  </div>
+  {%- endif -%}
+
+  {%endcomment%} 
+  
+  
+
+  {%- if settings.compare_product_enalbe -%}
+  <div class="pro-details-compare">
+    <a href="#" data-pid="{{ product.handle }}" class="compare"><i class="sli sli-refresh"></i></a>
+  </div>
+  {%- endif -%}
+  {%- endif -%}
+</div>
+
+{%- unless product.description contains '[affiliate_link]' -%}
+{%- if product.available and section.settings.dynamic_checkout_button_enable -%}
+<div class="dynamic_btn{% if section.settings.product_style == 'slider' %} text-center{% endif %}">
+  {{ form | payment_button }}
+</div>
+{%- endif -%}
+{%- endunless -%}
+
+
+
+
+  
+  
+{%- if section.settings.soldout_product_notification_enable -%}
+{% unless product.available %}
+<div id="sold-out" class="soldout-notify">
+  {% form 'contact' %}
+  {% if form.posted_successfully? %}
+  <p class="accent-text form-success note">{{ section.settings.notification_success_message }}</p>
+  {% else %}
+  <p class="notification-text"><i class="sli sli-bell"></i>{{ section.settings.notification_text }}</p>
+  {% endif %}
+  {% if form.errors %}
+  <div class="error note feedback accent-text">
+    <p>{{ section.settings.error_text }}</p>
+  </div>
+  {% endif %}
+  {% unless form.posted_successfully? %}
+  <div id="notify-me-wrapper" class="clearfix" style="display:none">
+    {% if customer %}
+    <input type="email" name="contact[email]" value="{{ customer.email }}" />
+    {% else %}
+    <input required="required" type="email" name="contact[email]" placeholder="your@email.com" class="styled-input{% if form.errors contains 'email' %} error{% endif %}" value="{{ contact.fields.email }}" />
+    {% endif %}
+    <input type="hidden" name="contact[body]" value="Please notify me when '{{ product.title | escape }}' becomes available." />
+    <input class="btn styled-submit theme-default-button" type="submit" value="{{ section.settings.send_button_title }}" />
+  </div>
+  {% endunless %}
+  {% endform %}
+</div>
+
+<script>
+  jQuery('#notify-me').click(function() {
+    jQuery('#notify-me-wrapper').fadeIn();
+    return false;
+  } );
+</script>
+{% endunless %}
+{%- endif -%}
+  
+
+
+
+{%- if section.settings.show_cat -%}
+<div class="pro-details-meta">
+  <span>{{ section.settings.cat_title }}</span>
+  <ul>
+    {%- for collection in product.collections limit: 5 -%}
+    <li><a href="{{ collection.url }}">{{ collection.title }}</a></li>{% unless forloop.last %}, {% endunless %}
+    {%- endfor -%}
+  </ul>
+</div>
+{%- endif -%}
+
+{%- if section.settings.show_tag and product.tags.size > 0 -%}
+<div class="pro-details-meta">
+  <span>{{ section.settings.tag_title }}</span>
+  <ul>
+    {%- for tag in product.tags limit: 5 -%}
+    <li><a href="/collections/all/{{ tag | handle }}">{{ tag }}</a></li>{% unless forloop.last %}, {% endunless %}
+    {%- endfor -%}
+  </ul>
+</div>
+{%- endif -%}
+
+{%- if section.settings.social_share_enable -%}
+{%- include 'social-share' -%}
+{%- endif -%}
+
+{%- if section.settings.payment_option_enable -%}
+<div class="custom-payment-options">
+  {%- if section.settings.payment_information != '' -%}
+  <div class="pro-details-meta">
+    <span>{{ section.settings.payment_information }}</span>
+  </div>
+  {%- endif -%}
+
+  {%- if section.settings.payment_image -%}
+  <img src="{{ section.settings.payment_image | img_url: '1024x1024' }}" alt="{{ section.settings.payment_image.alt }}">
+  {%- endif -%}
+
+  {%- include 'payment-icon' -%}
+</div>
+{%- endif -%}

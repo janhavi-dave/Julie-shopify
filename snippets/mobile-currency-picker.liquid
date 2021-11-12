@@ -1,0 +1,14 @@
+{%- if section.settings.curr_t != '' -%}
+<a class="mobile-currency-active" href="#">{{ section.settings.curr_t }} <i class="sli sli-arrow-down"></i></a>
+{%- endif -%}
+
+<div class="lang-curr-dropdown curr-dropdown-active currency">
+  <ul>
+    {% for value in currency %}
+    {% assign array = value | split: ',' %}
+    {% assign iso_4217 = array[0] | upcase | strip %}
+    {% assign name = array[1] | strip %}
+    <li data-currency="{{ iso_4217 }}" class="currency__item"><a style="cursor: pointer">{{ name }}</a></li>
+    {% endfor %}
+  </ul>
+</div>

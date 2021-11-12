@@ -1,1 +1,2 @@
+
 # Julie New Shopify theme

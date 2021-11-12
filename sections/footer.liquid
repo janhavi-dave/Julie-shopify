@@ -1,0 +1,42 @@
+<div class="footer-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="copyright text-left">
+          {{ section.settings.copy_ritht_text }}
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="payment-icon text-right">
+          {%- if section.settings.payment_image -%}
+          <img src="{{ section.settings.payment_image | img_url: 'large' }}" alt="{{ section.settings.payment_image.alt }}" />
+          {%- elsif shop.enabled_payment_types -%}
+          {%- for type in shop.enabled_payment_types -%}
+          <img src="{{ type | payment_type_img_url }}" height="35" alt="{{ type }}" />
+          {%- endfor -%}
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+		{
+          "type": "richtext",
+          "id": "copy_ritht_text",
+          "label": "CopyRight Text",
+		  "default": "<p>Copyright ©99Shopify All Right Reserved.</p>"
+		},
+		{
+          "type": "image_picker",
+          "id": "payment_image",
+          "label": "Payment image"
+		}
+    ]
+  }
+{% endschema %}

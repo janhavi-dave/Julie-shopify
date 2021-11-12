@@ -1,0 +1,31 @@
+<div class="setting-content">
+  <ul>
+    {%- if section.settings.currency_enable -%}
+    <li>
+      {%- include 'currency-picker' -%}
+    </li>
+    {%- endif -%}
+
+    {%- if section.settings.show_user_menu -%}
+    <li>
+      {%- if section.settings.account_menu_t != '' -%}
+      <h4>{{ section.settings.account_menu_t }}</h4>
+      {%- endif -%}
+      <ul>
+        {%- assign user_menu = section.settings.user_menu_handle -%}
+        
+        {%- if customer and shop.customer_accounts_enabled -%}
+        <li><a href="/account/logout">{{ section.settings.logout_title }}</a></li>
+        {%- else -%}
+        <li><a href="/account/login">{{ section.settings.login_title }}</a></li>
+        <li><a href="/account/register">{{ section.settings.register_title }}</a></li>
+        {%- endif -%}
+
+        {%- for link in linklists[user_menu].links -%}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {%- endfor -%}
+      </ul>
+    </li>
+    {%- endif -%}
+  </ul>
+</div>

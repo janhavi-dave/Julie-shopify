@@ -1,0 +1,49 @@
+ <div class="single-banner mb-30 banner_top">
+    <a href="{{ bset.btn1_url }}">
+      {%- if bset.img1 -%}
+      <img class="animated" src="{{ bset.img1 | img_url: 'master' }}" alt="{{ image.alt }}">              
+      {%- else -%}
+      <img class="animated" src="https://via.placeholder.com/855x825" alt="{{ image.alt }}">
+      {%- endif -%}
+    </a>
+    <div class="banner-content banner-position-{% if bset.text1_p == 'style_1' %}1{% elsif bset.text1_p == 'style_2' %}2{% elsif bset.text1_p == 'style_3' %}3{% elsif bset.text1_p == 'style_4' %}4{% elsif bset.text1_p == 'style_5' %}5{% endif %}">
+      {%- if bset.t1 != '' -%}
+      <h3>{{ bset.t1 }}</h3>
+      {%- endif -%}
+
+      {%- if bset.t2 != '' -%}
+      <h2>{{ bset.t2 }}</h2>
+      {%- endif -%}
+
+      {%- if bset.btn1 != '' -%}
+      <a class="ban_btn1"  href="{{ bset.btn1_url }}">{{ bset.btn1 }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+
+
+
+  {% style %}
+  
+  {% if block.settings.banner_custom_enable %}
+  .block_{{ block.id }} .banner_top .banner-content h3{
+  color: {{ bset.t1_color }};
+  }
+  .block_{{ block.id }} .banner_top .banner-content h2{
+  color: {{ bset.t2_color }};
+  }
+
+  .block_{{ block.id }} .banner_top .banner-content a.ban_btn1 {
+  color: {{ bset.btn1_color }};
+  border-bottom: 1px solid {{ bset.btn1_color }};
+  }
+  .block_{{ block.id }} .banner_top .banner-content a.ban_btn1:hover {
+  color: {{ bset.btn1_border_color }};
+  border-bottom: 1px solid {{ bset.btn1_border_color }};
+  }
+
+  {% endif %}
+
+  
+  {% endstyle %}
+

@@ -1,0 +1,7 @@
+{%- if product.description contains '[countdown]' -%}
+{%- assign count_down_first = product.description | split:'[/countdown]' | first -%}
+{%- assign count_down_final = count_down_first | split:'[countdown]' | last -%}
+<div class="ht-product-countdown-wrap">
+  <div class="ht-product-countdown" data-countdown="{{ count_down_final }}"></div>
+</div>
+{%- endif -%}

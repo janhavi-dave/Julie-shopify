@@ -1,0 +1,34 @@
+{%- assign on_sale = false -%}{%- if item.compare_at_price > item.price -%}{%- assign on_sale = true -%}{%- endif -%}
+{%- assign sold_out = true -%}{%- if item.available -%}{%- assign sold_out = false -%}{%- endif -%}
+{%- assign variant = item.selected_or_first_available_variant -%}
+{%- if item.available -%}{%- assign func = "Shopify.addItem(" | append: variant.id | append: ", 1)" -%}{%- endif -%}  
+
+{% if item.featured_image %}
+  {%- if settings.p_list == 'list_1' -%}
+  {% include 'product-search-item-1' %}
+  {%- elsif settings.p_list == 'list_2' -%}
+  {% include 'product-search-item-2' %}
+  {%- elsif settings.p_list == 'list_3' -%}
+  {% include 'product-search-item-3' %}
+  {%- endif -%}
+{% else %}
+<div class="shop-list-wrap shop-list-mrg2 shop-list-mrg-none mb-30">
+  <div class="row">
+    <div class="col-lg-4 col-md-4">
+      {% if item.image.src %}
+      <div class="product-list-img">
+        <a href="{{ item.url }}"> 
+          <img src="{{ item.image.src | img_url: 'large' }}" alt="{{ item.image.alt }}">
+        </a>
+      </div>
+      {% endif %}
+    </div>
+    <div class="col-lg-8 col-md-8 align-self-center">
+      <div class="shop-list-content">
+        <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
+        <p>{{ item.content | strip_html | truncatewords: 50 | highlight: search.terms }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}

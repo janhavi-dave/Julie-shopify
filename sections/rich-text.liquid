@@ -1,0 +1,341 @@
+<div class="rich-text" id="section-{{ section.id }}">
+  <div class="{% if section.settings.section_width == 'full_width' %}container-fluid {% elsif section.settings.section_width == 'box_width' %}container-fluid section-padding-1{% elsif section.settings.section_width == 'default' %}container default {% endif %}">
+   
+    {% if section.settings.section_title != '' or section.settings.section_sub_title != '' %}
+    <div class="section-title {{ section.settings.title_align }} pb-60">
+      {% if section.settings.section_title != '' %}
+      <h2>{{ section.settings.section_title }}</h2>
+      {% endif %}
+
+      {% if section.settings.section_sub_title != '' %}
+      <p>{{ section.settings.section_sub_title }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="row">
+      <div class="col-12">
+        <div class="rich-text">
+          {{ section.settings.rich_text_handle }}
+        </div>
+      </div>
+    </div>	
+  </div>
+</div>
+
+
+{%- include 'section-style' -%}
+
+
+{% if section.settings.section_title_custom_color %}
+<style>
+  #section-{{ section.id }} .section-title h2{
+    color: {{ section.settings.section_title_color }};
+    font-size:{{ section.settings.section_title_font_size }}px;
+  }
+
+  #section-{{ section.id }} .section-title p{
+    color: {{ section.settings.section_subtitle_color }};
+    font-size:{{ section.settings.section_des_font_size }}px;
+  }
+</style>
+{% endif %}
+
+
+
+{% schema %}
+  {
+    "name": "Rich Text",
+    "settings": [
+              {
+                "type": "select",
+                "id": "section_width",
+                "label": "Section Width",
+                "options":[
+                      {
+                          "label": "Full Width",
+                          "value": "full_width"
+                      },
+                      {
+                          "label": "Box Width",
+                          "value": "box_width"
+                      },
+                      {
+                          "label": "Default Width",
+                          "value": "default"
+                      }
+                  ],
+                  "default": "default"
+              },
+		{
+			"type": "header",
+            "content": "Section Title"
+        },
+		{
+            "type": "text",
+            "id": "section_title",
+            "label": "Title",
+            "default": "All Products"
+        },
+		{
+            "type": "textarea",
+            "id": "section_sub_title",
+            "label": "Subtitle",
+            "default": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical"
+        },
+        {
+          "type": "checkbox",
+          "id": "section_title_custom_color",
+          "label": "Section Title Style Enable",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "section_title_color",
+          "label": "Title Color",
+          "default": "#1f2226"
+        },
+        {
+          "type": "color",
+          "id": "section_subtitle_color",
+          "label": "Subtitle Color",
+          "default": "#5a5a5a"
+        },
+			{
+                "type": "select",
+                "id": "title_align",
+                "label": "Title Align",
+                "options":[
+                      {
+                          "label": "Text Left",
+                          "value": "text-left"
+                      },
+                      {
+                          "label": "Text Center",
+                          "value": "text-center"
+                      },
+                      {
+                          "label": "Text Right",
+                          "value": "text-right"
+                      }
+                  ],
+                  "default": "text-center"
+              },        
+              {
+                "type": "text",
+                "id": "section_title_font_size",
+                "label": "Font Size: Font Size",
+                "default": "30",
+                "info": "Section Title Font Size"
+              },              
+			  {
+                "type": "text",
+                "id": "section_des_font_size",
+                "label": "Font Size: Font Size",
+                "default": "14",
+                "info": "Section Description Font Size"
+              },
+		{
+		  "type": "header",
+          "content": "Rich Text"
+        },
+		{
+          "type": "richtext",
+          "id": "rich_text_handle",
+          "label": "Content",
+		  "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        }
+	],
+	"blocks":[
+	   {
+          "type": "section_padding",
+          "name": "Section Padding",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 100
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 80
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 60
+			}
+          ]
+       },
+	   {
+          "type": "section_margin",
+          "name": "Section Margin",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			}
+          ]
+       },
+	   {
+          "type": "section_background",
+          "name": "Section Background",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "image_picker",
+			  "id": "section_bg_image",
+			  "label": "BG Image"
+			},
+			{
+			  "type": "color",
+			  "id": "section_bg_color",
+			  "label": "BG Color",
+			  "default": "#ffffff"
+			}
+          ]
+       }
+	],
+	"presets": [
+		{
+		  "name": "Rich Text",
+		  "category": "others",
+		  "blocks":[
+				{
+					"type": "section_padding"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+

@@ -1,0 +1,755 @@
+<div class="testimonial-area" id="section-{{ section.id }}" data-section="heroOwlSlider">
+  <div class="{% if section.settings.section_width == 'full_width' %}container-fluid {% elsif section.settings.section_width == 'box_width' %}container-fluid section-padding-1{% elsif section.settings.section_width == 'default' %}container default {% endif %}">
+    
+    {% if section.settings.section_title != '' or section.settings.section_sub_title != '' %}
+    <div class="section-title {{ section.settings.title_align }} pb-60">
+      {% if section.settings.section_title != '' %}
+      <h2>{{ section.settings.section_title }}</h2>
+      {% endif %}
+
+      {% if section.settings.section_sub_title != '' %}
+      <p>{{ section.settings.section_sub_title }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+    
+    
+    <div class="row">
+      <div class="col-sm-{{section.settings.testi_col_content}} ml-auto mr-auto">
+        <div class="testimonial-active-test owl-carousel {% if section.settings.border_enable %} border_enable {% endif %} dot-style-1 {{section.settings.dot_style}} nav-style-{% if section.settings.nav_style == 'style_1' %}1{% elsif section.settings.nav_style == 'style_4' %}2 nav_2_left{% else %}2{% endif %}" data-owl-carousel='{ 
+             
+              "loop": true,
+              {% if settings.rtl_enable %}
+              "rtl": true,
+              {% endif %}
+
+              {% if section.settings.nav_style == 'style_5' %}
+              "nav": false,
+              {% else %}
+              "nav": true,
+              {% endif %}
+
+              {% if section.settings.nav_style == 'style_1' %}
+              "navText": ["<i class=&#x27;sli sli-arrow-left&#x27;></i>", "<i class=&#x27;sli sli-arrow-right&#x27;></i>"],
+              {% elsif section.settings.nav_style == 'style_2' %}
+              "navText": ["<i class=&#x27;sli sli-arrow-up&#x27;></i>", "<i class=&#x27;sli sli-arrow-down&#x27;></i>"],    
+              {% elsif section.settings.nav_style == 'style_4' %}
+              "navText": ["<i class=&#x27;sli sli-arrow-up&#x27;></i>", "<i class=&#x27;sli sli-arrow-down&#x27;></i>"],
+              {% endif %}
+
+              {% if section.settings.dot_style == 'dot_hide' %}
+              "dots": false,
+              {% else %}
+              "dots": true,
+              {% endif %}
+
+              "autoplay": false,
+              "autoplayTimeout": 5000,
+              "items": {{ section.settings.testi_col }},
+              "margin": 30,
+                               
+              "responsive":{
+              "0":{ "items": 1 },
+              "576":{ "items": 1 },
+              "768":{ "items": {{ section.settings.testi_col_sm }} },
+              "1000":{ "items": {{ section.settings.testi_col_md }} },
+              "1500":{ "items": {{ section.settings.testi_col }} }
+               }                
+
+           }'>
+          
+          {%- for block in section.blocks -%}{%- case block.type -%}
+          {%- when 'testimonial' -%}
+          <div class="single-testimonial text-center">
+            {% if block.settings.commentators_img %}
+            <img src="{{ block.settings.commentators_img | img_url: '100x' }}" alt="{{ image.alt }}">
+
+            {% endif %}
+            <p style="{{ section.settings.comment_color }}">{{ block.settings.comments }}</p>
+            <div class="client-info">
+              {% if section.settings.comment_icon %}
+              <img src="{{ section.settings.comment_icon | img_url: '100x' }}" alt="{{ image.alt }}">
+              {% endif %}
+              <h5 style="{{ section.settings.commentators_color }}">{{ block.settings.commentators }}</h5>
+            </div>
+          </div>
+          {%- endcase -%}{%- endfor -%}
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- include 'section-style' -%}
+
+
+{% if section.settings.testi_custom_color %}
+
+<style>
+
+  #section-{{ section.id }} .single-testimonial p {
+    color:{{section.settings.comment_color}}
+  }
+  #section-{{ section.id }} .single-testimonial .client-info h5 {
+    color: {{section.settings.commentators_color}}
+  }
+  #section-{{ section.id }} .section-title h2{
+    color: {{ section.settings.section_title_color }};
+    font-size:{{ section.settings.section_title_font_size }}px;
+  }
+
+  #section-{{ section.id }} .section-title p{
+    color: {{ section.settings.section_subtitle_color }};
+    font-size:{{ section.settings.section_des_font_size }}px;
+  }
+  #section-{{ section.id }} .border_enable .single-testimonial{
+      border-color: {{ section.settings.border_color }};
+  }
+  
+
+</style>
+
+{% endif %}
+
+
+
+{%- if section.settings.nav_custom_style -%}  
+<style>
+  #section-{{ section.id }}.testimonial-area .nav-style-1.owl-carousel .owl-nav div, 
+  #section-{{ section.id }}.testimonial-area .nav-style-2 .owl-nav div, 
+  #section-{{ section.id }}.testimonial-area .nav-style-3 .owl-nav div {
+    color: {{ section.settings.controlnav_color }};
+    background-color: {{ section.settings.controlnav_bg_color }};
+    border: 1px solid {{ section.settings.controlnav_border_color }};
+    border-radius:{{section.settings.nav_border_radius}}px;
+  }
+  #section-{{ section.id }}.testimonial-area .nav-style-1.owl-carousel .owl-nav div:hover, 
+  #section-{{ section.id }}.testimonial-area .nav-style-2 .owl-nav div:hover, 
+  #section-{{ section.id }}.testimonial-area .nav-style-3 .owl-nav div:hover {
+    color: {{ section.settings.hover_controlnav_color }};
+    background-color: {{ section.settings.hover_controlnav_bg_color }};
+    border: 1px solid {{ section.settings.hover_controlnav_border_color }};
+  }
+</style>
+{%endif%}
+
+
+{%- if section.settings.dot_custom_style -%}  
+<style>
+
+  #section-{{ section.id }}.testimonial-area .dot-style-1 .owl-dots .owl-dot {
+    border: 1px solid {{section.settings.dot_color}};
+    outline: 1px solid {{section.settings.dot_color}};
+  }
+
+  #section-{{ section.id }}.testimonial-area .dot-style-1 .owl-dots .owl-dot.active {
+    background-color: {{section.settings.dot_active_color}};
+    border: 1px solid {{section.settings.dot_active_color}};
+    outline: 1px solid {{section.settings.dot_active_color}};
+  }    
+
+</style>
+{%endif%}
+
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Testimonial",
+    "settings": [
+              {
+                "type": "select",
+                "id": "section_width",
+                "label": "Section Width",
+                "options":[
+                      {
+                          "label": "Full Width",
+                          "value": "full_width"
+                      },
+                      {
+                          "label": "Box Width",
+                          "value": "box_width"
+                      },
+                      {
+                          "label": "Default Width",
+                          "value": "default"
+                      }
+                  ],
+                  "default": "default"
+              },
+			{
+			"type": "select",
+			"id": "testi_col_content",
+			"label": "Main Content Column",
+			"options": [
+				{
+					"label": "1",
+					"value": "1"
+				},
+				{
+					"label": "2",
+					"value": "2"
+				},
+				{
+					"label": "3",
+					"value": "3"
+				},				
+				{
+					"label": "4",
+					"value": "4"
+				},
+				{
+					"label": "5",
+					"value": "5"
+				},				
+				{
+					"label": "6",
+					"value": "6"
+				},
+				{
+					"label": "7",
+					"value": "7"
+				},
+				{
+					"label": "8",
+					"value": "8"
+				},
+				{
+					"label": "9",
+					"value": "9"
+				},
+				{
+					"label": "10",
+					"value": "10"
+				},
+				{
+					"label": "11",
+					"value": "11"
+				},
+				{
+					"label": "12",
+					"value": "12"
+				}
+			],
+			"default": "10"
+			},
+            {
+              "type": "select",
+              "id": "nav_style",
+              "label": "Nav Style",
+              "options": [
+                  {"label": "Style 1", "value": "style_1"},
+                  {"label": "Style 2", "value": "style_2"},
+                  {"label": "Style 3", "value": "style_4"},
+                  {"label": "Hide Nav", "value": "style_5"}
+              ],
+              "default": "style_1"
+            }, 
+			{
+            "type": "checkbox",
+            "id": "nav_custom_style",
+            "label": "Nav Custom Style Enable",
+            "default": false
+          },
+          {
+            "type": "range",
+            "id": "nav_border_radius",
+            "label": "Nav Border Radius",
+            "max": 50,
+            "min": 0,
+            "step": 1,
+            "default": 30,
+            "unit": "px"
+          },
+          {
+            "type": "color",
+            "id": "controlnav_color",
+            "label": "Color",
+            "default": "#1f2226"
+          },
+          {
+            "type": "color",
+            "id": "controlnav_bg_color",
+            "label": "BG Color",
+            "default": "#fff"
+          },
+          {
+            "type": "color",
+            "id": "controlnav_border_color",
+            "label": "Border Color",
+            "default": "#e1e2e2"
+          },
+          {
+            "type": "color",
+            "id": "hover_controlnav_color",
+            "label": "Hover Color",
+            "default": "#fff"
+          },
+          {
+            "type": "color",
+            "id": "hover_controlnav_bg_color",
+            "label": "Hover BG Color",
+            "default": "#ff3535"
+          },
+          {
+            "type": "color",
+            "id": "hover_controlnav_border_color",
+            "label": "Hover Border Color",
+            "default": "#ff3535"
+          },
+          {
+            "type": "select",
+            "id": "dot_style",
+            "label": "Dot Position",
+            "options": [
+                {"label": "Left", "value": "dot_left"},
+                {"label": "Bottom", "value": "dot_bottom"},
+                {"label": "Right", "value": "dot_right"},
+                {"label": "Hide Dot", "value": "dot_hide"}
+            ],
+            "default": "dot_left"
+          },
+          {
+            "type": "checkbox",
+            "id": "dot_custom_style",
+            "label": "Dot Custom Style Enable",
+            "default": false
+          },
+          {
+            "type": "color",
+            "id": "dot_color",
+            "label": "Color",
+            "default": "#96bf48"
+          },
+          {
+            "type": "color",
+            "id": "dot_active_color",
+            "label": "Dot Active Color",
+            "default": "#96bf48"
+          },
+  
+			{
+			"type": "select",
+			"id": "testi_col",
+			"label": "Single Testimonial Column (Main)",
+			"options": [
+				{
+					"label": "1",
+					"value": "1"
+				},
+				{
+					"label": "2",
+					"value": "2"
+				},
+				{
+					"label": "3",
+					"value": "3"
+				},				
+				{
+					"label": "4",
+					"value": "4"
+				},
+				{
+					"label": "5",
+					"value": "5"
+				},
+				{
+					"label": "6",
+					"value": "6"
+				}
+			],
+			"default": "1"
+			},
+			{
+			"type": "select",
+			"id": "testi_col_md",
+			"label": "Single Testimonial Column (Medium)",
+			"options": [
+				{
+					"label": "1",
+					"value": "1"
+				},
+				{
+					"label": "2",
+					"value": "2"
+				},
+				{
+					"label": "3",
+					"value": "3"
+				},				
+				{
+					"label": "4",
+					"value": "4"
+				},
+				{
+					"label": "5",
+					"value": "5"
+				},
+				{
+					"label": "6",
+					"value": "6"
+				}
+			],
+			"default": "1"
+		},
+		{
+			"type": "select",
+			"id": "testi_col_sm",
+			"label": "Single Testimonial Column (Small)",
+			"options": [
+				{
+					"label": "1",
+					"value": "1"
+				},
+				{
+					"label": "2",
+					"value": "2"
+				},
+				{
+					"label": "3",
+					"value": "3"
+				},				
+				{
+					"label": "4",
+					"value": "4"
+				},
+				{
+					"label": "5",
+					"value": "5"
+				},
+				{
+					"label": "6",
+					"value": "6"
+				}
+			],
+			"default": "1"
+		},
+		{
+            "type": "text",
+            "id": "section_title",
+            "label": "Title",
+			"default": "What our <span> Clients say </span>"
+        },
+		{
+            "type": "textarea",
+            "id": "section_sub_title",
+            "label": "Subtitle",
+            "default": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical"
+        },
+        {
+          "type": "checkbox",
+          "id": "testi_custom_color",
+          "label": "Testimonial Custom Style Enable",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "section_title_color",
+          "label": "Title Color",
+          "default": "#1f2226"
+        },
+        {
+          "type": "color",
+          "id": "section_subtitle_color",
+          "label": "Subtitle Color",
+          "default": "#5a5a5a"
+        },
+			{
+                "type": "select",
+                "id": "title_align",
+                "label": "Title Align",
+                "options":[
+                      {
+                          "label": "Text Left",
+                          "value": "text-left"
+                      },
+                      {
+                          "label": "Text Center",
+                          "value": "text-center"
+                      },
+                      {
+                          "label": "Text Right",
+                          "value": "text-right"
+                      }
+                  ],
+                  "default": "text-center"
+              },
+              {
+                "type": "checkbox",
+                "id": "border_enable",
+                "label": "Border Show/Hide",
+                "default": false
+              },
+              {
+                "type": "color",
+                "id": "border_color",
+                "label": "Border Color",
+                "default": "#e5e5e5"
+              },
+              {
+                "type": "text",
+                "id": "section_title_font_size",
+                "label": "Font Size: Font Size",
+                "default": "30",
+                "info": "Section Title Font Size"
+              },              
+			  {
+                "type": "text",
+                "id": "section_des_font_size",
+                "label": "Font Size: Font Size",
+                "default": "14",
+                "info": "Section Description Font Size"
+              },
+
+		{
+            "type": "color",
+            "id": "comment_color",
+            "label": "Comments Color",
+            "default": "#333"
+        },
+		{
+            "type": "color",
+            "id": "commentators_color",
+            "label": "Commentators Name Color",
+            "default": "#1f2226"
+        },
+        {
+            "type": "image_picker",
+            "id": "comment_icon",
+            "label": "Comment Icon"
+        }
+    ],
+	"blocks":[
+	   {
+          "type": "testimonial",
+          "name": "Testimonial",
+          "settings": [
+              {
+                  "type": "image_picker",
+                  "id": "commentators_img",
+                  "label": "Commentator Image",
+                  "info": "Recommended size: 100x100 px"
+              },
+              {
+                  "type": "textarea",
+                  "id": "comments",
+                  "label": "Comments",
+                  "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit."
+              },
+              {
+                  "type": "text",
+                  "id": "commentators",
+                  "label": "Commentators Name",
+                  "default": "Hester Perkins"
+              }
+          ]
+       },
+	   {
+          "type": "section_margin",
+          "name": "Section Margin",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			}
+          ]
+       },
+	   {
+          "type": "section_padding",
+          "name": "Section Padding",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top",
+			  "min": 0,
+			  "max": 300,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 80
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom",
+			  "min": 0,
+			  "max": 300,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 95
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_md",
+			  "min": 0,
+			  "max": 300,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_md",
+			  "min": 0,
+			  "max": 300,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 80
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_xs",
+			  "min": 0,
+			  "max": 300,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_xs",
+			  "min": 0,
+			  "max": 300,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 60
+			}
+          ]
+       },
+	   {
+          "type": "section_background",
+          "name": "Section Background",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "image_picker",
+			  "id": "section_bg_image",
+			  "label": "BG Image"
+			},
+			{
+			  "type": "color",
+			  "id": "section_bg_color",
+			  "label": "BG Color",
+			  "default": "#ffffff"
+			}
+          ]
+       }
+	],
+	"presets": [
+		{
+		  "name": "Testimonial",
+		  "category": "4. Testimonial",
+		  "blocks":[
+				{
+					"type": "testimonial"
+				},
+				{
+					"type": "testimonial"
+				},
+				{
+					"type": "section_padding"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+
+

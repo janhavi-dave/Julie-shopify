@@ -1,0 +1,41 @@
+<div class="blog-wrap mb-30">
+  
+  {% if section.settings.blog_image_enable %}
+  <div class="blog-img">
+    {% if article.image %}
+    <a href="{{ article.url }}">{{ article | img_url: '600x400' , crop: 'center' | img_tag: article.title }}</a>
+    {% endif %}
+  </div>
+  {%- endif -%}
+  
+  <div class="blog-content blog-content-mrg-2 {% if section.settings.content_align == 'center' %}text-center{% elsif section.settings.content_align == 'right' %}text-right{% else %}text-left{% endif %}">
+    <div class="blog-meta blog-meta-mrg">
+      <ul>
+        
+        {% if section.settings.blog_date_enable %}
+        <li><a href="#" class="remove_href">{{ article.published_at | date: '%d %B, %Y' }}</a></li>
+        {%- endif -%}
+
+        {% if section.settings.blog_comments_enable %}
+        {%- if article.comments_enabled? -%}
+        <li><a href="{{ article.url }}#comments">{{ article.comments.size }} {{ article.comments.size | pluralize: 'comment' , 'comments' }}</a></li>
+        {%- endif -%}
+        {% endif %}
+        
+      </ul>
+    </div>
+    
+    {% if section.settings.blog_title_enable %}
+    <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+    {%- endif -%}
+    
+    {% if section.settings.blog_button_enable %}
+    {%- if section.settings.button_title != '' -%}
+    <div class="show-more-btn toggle-btn">
+      <a class="loadMore" href="{{ article.url }}">{{ section.settings.button_title }}</a>
+    </div>
+    {%- endif -%}
+    {%- endif -%}
+    
+  </div>
+</div>

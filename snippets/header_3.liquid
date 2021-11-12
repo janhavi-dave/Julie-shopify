@@ -1,0 +1,67 @@
+<header class="header-area sticky-bar header_style_3 {% if template == 'index' %} {{ section.settings.enable_hea_transprant}} {%- endif -%} {{ section.settings.menu_position}}">
+  <div class="top_logo_area">
+  <div class="{% if section.settings.section_width == 'full_width' %}container-fluid {% elsif section.settings.section_width == 'box_width' %}container-fluid section-padding-1{% elsif section.settings.section_width == 'default' %}container default {% endif %}">
+   
+      <div class="row">        
+        <div class="col-xl-12 col-lg-12">          
+          <div class="logo pt-40 {{ section.settings.logo_position }}">
+            {%- include 'header-logo' -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-header-wrap">
+  <div class="{% if section.settings.section_width == 'full_width' %}container-fluid {% elsif section.settings.section_width == 'box_width' %}container-fluid section-padding-1{% elsif section.settings.section_width == 'default' %}container default {% endif %}">
+   
+      <div class="row"> 
+        <div class="col-xl-7 col-lg-7 ">
+          <div class="main-menu">
+            {%- include 'main-menu' -%}
+          </div>
+        </div>
+        <div class="col-xl-2 col-lg-2">          
+          <div class="logo {{ section.settings.logo_position }}">
+            {%- include 'header-logo' -%}
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3">
+          <div class="header-right-wrap pt-40">
+            {%- if section.settings.show_search -%}
+            <div class="header-search">
+              <a class="search-active" href="#"><i class="sli sli-magnifier"></i></a>
+            </div>
+            {%- endif -%}
+
+            <div class="cart-wrap">
+              {%- include 'mini-cart' -%}
+            </div>
+
+            {%- if section.settings.currency_enable or section.settings.show_user_menu -%}
+            <div class="setting-wrap">
+              <button class="setting-active">
+                <i class="sli sli-settings"></i>
+              </button>
+              {%- include 'currency-usermenu' -%}
+            </div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {%- if section.settings.show_search -%}
+    <div class="main-search-active">
+      <div class="sidebar-search-icon">
+        <button class="search-close"><span class="sli sli-close"></span></button>
+      </div>
+      <div class="sidebar-search-input">
+        {%- include 'search-bar' -%}
+      </div>
+    </div>
+    {%- endif -%}    
+  </div>
+  {%- include 'mobile-header' -%}
+</header>
+
+{%- include 'header-extend' -%}
