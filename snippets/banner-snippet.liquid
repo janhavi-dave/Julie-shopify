@@ -3,7 +3,7 @@
       {%- if bset.img1 -%}
       <img class="animated" src="{{ bset.img1 | img_url: 'master' }}" alt="{{ image.alt }}">              
       {%- else -%}
-      <img class="animated" src="https://via.placeholder.com/855x825" alt="{{ image.alt }}">
+      <img class="animated" src="https://via.placeholder.com/570x355" alt="{{ image.alt }}">
       {%- endif -%}
     </a>
     <div class="banner-content banner-position-{% if bset.text1_p == 'style_1' %}1{% elsif bset.text1_p == 'style_2' %}2{% elsif bset.text1_p == 'style_3' %}3{% elsif bset.text1_p == 'style_4' %}4{% elsif bset.text1_p == 'style_5' %}5{% endif %}">

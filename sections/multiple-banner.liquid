@@ -1,5 +1,5 @@
 <div class="banner-area" id="section-{{ section.id }}">
-  <div class="{% if section.settings.section_width == 'full_width' %}container-fluid {% elsif section.settings.section_width == 'box_width' %}container-fluid section-padding-1{% elsif section.settings.section_width == 'default' %}container default {% endif %}">
+  <div class="{% if section.settings.section_width == 'full_width' %}container {% elsif section.settings.section_width == 'box_width' %}container section-padding-1{% elsif section.settings.section_width == 'default' %}container default {% endif %}">
  	<div class="row">
       {%- for block in section.blocks -%}{%- case block.type -%}
       {%- when 'banner' -%}{%- assign bset = block.settings -%}
@@ -11,7 +11,7 @@
             {%- if bset.img1 -%}
             <img class="animated" src="{{ bset.img1 | img_url: 'master' }}" alt="{{ image.alt }}">              
             {%- else -%}
-            <img class="animated" src="https://via.placeholder.com/855x825" alt="{{ image.alt }}">
+            <img class="animated" src="https://via.placeholder.com/570x355" alt="{{ image.alt }}">
             {%- endif -%}
           </a>
           <div class="banner-common banner-content{% if bset.text1_p == 'style_5' %}-2{% elsif bset.text1_p == 'style_7' %}-3{% endif %} banner-position-{% if bset.text1_p == 'style_5' %}5{% elsif bset.text1_p == 'style_6' %}6{% elsif bset.text1_p == 'style_7' %}7{% endif %}">

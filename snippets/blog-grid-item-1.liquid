@@ -9,15 +9,15 @@
   {% endif %}
   
   <div class="blog-content {% if section.settings.content_align == 'center' %}text-center{% elsif section.settings.content_align == 'right' %}text-right{% else %}text-left{% endif %}">
-     
-    {% if section.settings.blog_title_enable %}
-    <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+    {% if section.settings.blog_date_enable %}
+    <a href="#" class="remove_href">{{ article.published_at | date: '%d %B, %Y' }}</a>
     {% endif %}
+  
     
     <div class="blog-meta blog-mrg-border">
       <ul>
-        {% if section.settings.blog_date_enable %}
-        <li><a href="#" class="remove_href">{{ article.published_at | date: '%d %B, %Y' }}</a></li>
+        {% if section.settings.blog_title_enable %}
+        <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
         {% endif %}
         
         {% if section.settings.blog_comments_enable %}
