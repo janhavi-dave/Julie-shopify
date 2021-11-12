@@ -293,7 +293,7 @@
         "type": "header",
         "settings": {
           "section_width": "box_width",
-          "header_style": "style_2",
+          "header_style": "style_1",
           "enable_hea_transprant": "transparent_disable",
           "enable_header_custom_style": true,
           "main_header_font": "open_sans_n4",
@@ -305,10 +305,10 @@
           "menu_color": "#5b5b5b",
           "menu_hover__color": "#ff9609",
           "menu_hover_angle_color": "#ffffff",
-          "logo_width": 125,
+          "logo_width": 165,
           "ratina_logo_enable": false,
           "logo_position": "text-center",
-          "menu_position": "menu-left",
+          "menu_position": "menu-center",
           "megamenu_width": "1000",
           "megamenu_width_md": "900",
           "megamenu_left_space": "-400",
@@ -423,8 +423,12 @@
           "full_width": "def",
           "products_limit_handle": 12,
           "product_column": "4",
+          "product_column_lg": "4",
           "product_column_md": "6",
+          "product_column_sm": "6",
+          "product_column_xs": "6",
           "tab_bar_enable": true,
+          "grid_list_pos": "right_pos",
           "showing_product_counter_enable": true,
           "showing_title_handle": "Showing | of | result",
           "short_by_enable": true,
@@ -1144,112 +1148,6 @@
           "map_icon_image": "shopify:\/\/shop_images\/8.png"
         }
       },
-      "1556516965682": {
-        "type": "multiple-banner",
-        "disabled": true,
-        "blocks": {
-          "1556516965682-0": {
-            "type": "banner",
-            "settings": {
-              "ban_col": "4",
-              "ban_md_col": "6",
-              "ban_sm_col": "6",
-              "t1": "WOMEN",
-              "t2": "test",
-              "btn1": "button",
-              "btn1_url": "shopify:\/\/collections\/all",
-              "text1_p": "style_7",
-              "banner_custom_color": false,
-              "t1_color": "#15fc3f",
-              "t2_color": "#9417bd",
-              "btn1_color": "#10ebc0",
-              "btn1_border_color": "#f85e51"
-            }
-          },
-          "1556517089553": {
-            "type": "banner",
-            "settings": {
-              "ban_col": "4",
-              "ban_md_col": "6",
-              "ban_sm_col": "6",
-              "t1": "MEN",
-              "t2": "",
-              "btn1": "",
-              "btn1_url": "shopify:\/\/collections\/all",
-              "text1_p": "style_5",
-              "banner_custom_color": false,
-              "t1_color": "#1f2226",
-              "t2_color": "#1f2226",
-              "btn1_color": "#1f2226",
-              "btn1_border_color": "#1f2226"
-            }
-          },
-          "1556516965682-1": {
-            "type": "banner",
-            "settings": {
-              "ban_col": "4",
-              "ban_md_col": "6",
-              "ban_sm_col": "6",
-              "t1": "ACCESSORIES",
-              "t2": "",
-              "btn1": "",
-              "btn1_url": "shopify:\/\/collections\/all",
-              "text1_p": "style_5",
-              "banner_custom_color": false,
-              "t1_color": "#1f2226",
-              "t2_color": "#1f2226",
-              "btn1_color": "#1f2226",
-              "btn1_border_color": "#1f2226"
-            }
-          },
-          "1556517152244": {
-            "type": "banner",
-            "settings": {
-              "ban_col": "6",
-              "ban_md_col": "6",
-              "ban_sm_col": "6",
-              "t1": "BLACK FRIDAY",
-              "t2": "Wall Lighting <br>Black.",
-              "btn1": "SHOP NOW",
-              "btn1_url": "shopify:\/\/collections\/all",
-              "text1_p": "style_6",
-              "banner_custom_color": false,
-              "t1_color": "#1f2226",
-              "t2_color": "#1f2226",
-              "btn1_color": "#1f2226",
-              "btn1_border_color": "#1f2226"
-            }
-          },
-          "1556517177667": {
-            "type": "banner",
-            "settings": {
-              "ban_col": "6",
-              "ban_md_col": "6",
-              "ban_sm_col": "6",
-              "t1": "",
-              "t2": "Wall Lighting Black.",
-              "btn1": "SHOP NOW",
-              "btn1_url": "shopify:\/\/collections\/all",
-              "text1_p": "style_7",
-              "banner_custom_color": false,
-              "t1_color": "#1f2226",
-              "t2_color": "#1f2226",
-              "btn1_color": "#1f2226",
-              "btn1_border_color": "#1f2226"
-            }
-          }
-        },
-        "block_order": [
-          "1556516965682-0",
-          "1556517089553",
-          "1556516965682-1",
-          "1556517152244",
-          "1556517177667"
-        ],
-        "settings": {
-          "section_width": "default"
-        }
-      },
       "1556530642117": {
         "type": "tab-with-product",
         "blocks": {
@@ -1326,6 +1224,7 @@
         "blocks": {
           "1556604411806-0": {
             "type": "banner",
+            "disabled": true,
             "settings": {
               "product_column_handle": "3",
               "product_column_handle_md": "6",
@@ -1344,6 +1243,7 @@
           },
           "1556604411806-1": {
             "type": "banner",
+            "disabled": true,
             "settings": {
               "product_column_handle": "3",
               "product_column_handle_md": "6",
@@ -1363,7 +1263,7 @@
           "1573364669905": {
             "type": "banner",
             "settings": {
-              "product_column_handle": "3",
+              "product_column_handle": "6",
               "product_column_handle_md": "6",
               "product_column_handle_sm": "6",
               "t1": "",
@@ -1381,7 +1281,7 @@
           "a64d45e1-1aaf-4463-9565-bbae63789a90": {
             "type": "banner",
             "settings": {
-              "product_column_handle": "3",
+              "product_column_handle": "6",
               "product_column_handle_md": "6",
               "product_column_handle_sm": "6",
               "t1": "15% off",
@@ -1425,82 +1325,6 @@
           "carsoule_banner_col_sm": 1,
           "tab_arsoule_arrow_enable": true,
           "product_casoule_row": 1
-        }
-      },
-      "1556606067346": {
-        "type": "testimonial",
-        "blocks": {
-          "1556606067346-0": {
-            "type": "testimonial",
-            "settings": {
-              "commentators_img": "shopify:\/\/shop_images\/blog-comment1.png",
-              "comments": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit.",
-              "commentators": "Hester Perkins"
-            }
-          },
-          "1556606067346-1": {
-            "type": "testimonial",
-            "settings": {
-              "commentators_img": "shopify:\/\/shop_images\/blog-administrator.png",
-              "comments": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit.",
-              "commentators": "Nicole Valdez"
-            }
-          },
-          "1556606249870": {
-            "type": "section_padding",
-            "settings": {
-              "section_padding_top": 80,
-              "section_padding_bottom": 95,
-              "section_padding_top_md": 80,
-              "section_padding_bottom_md": 95,
-              "section_padding_top_xs": 50,
-              "section_padding_bottom_xs": 55
-            }
-          },
-          "1556606209478": {
-            "type": "section_background",
-            "settings": {
-              "section_bg_color": "#ece9e9"
-            }
-          }
-        },
-        "block_order": [
-          "1556606067346-0",
-          "1556606067346-1",
-          "1556606249870",
-          "1556606209478"
-        ],
-        "settings": {
-          "section_width": "default",
-          "testi_col_content": "10",
-          "nav_style": "style_1",
-          "nav_custom_style": false,
-          "nav_border_radius": 30,
-          "controlnav_color": "#1f2226",
-          "controlnav_bg_color": "#ffffff",
-          "controlnav_border_color": "#e1e2e2",
-          "hover_controlnav_color": "#ffffff",
-          "hover_controlnav_bg_color": "#ff3535",
-          "hover_controlnav_border_color": "#ff3535",
-          "dot_style": "dot_hide",
-          "dot_custom_style": false,
-          "dot_color": "#96bf48",
-          "dot_active_color": "#96bf48",
-          "testi_col": "1",
-          "testi_col_md": "1",
-          "testi_col_sm": "1",
-          "section_title": "What our <span> Clients say <\/span>",
-          "section_sub_title": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical",
-          "testi_custom_color": true,
-          "section_title_color": "#1f2226",
-          "section_subtitle_color": "#5a5a5a",
-          "title_align": "text-center",
-          "border_enable": false,
-          "border_color": "#e5e5e5",
-          "section_title_font_size": "40",
-          "section_des_font_size": "14",
-          "comment_color": "#222222",
-          "commentators_color": "#222222"
         }
       },
       "1556613203054": {
@@ -1577,52 +1401,6 @@
           "section_width": "box_width",
           "service_style": "style_one",
           "service_col": "3"
-        }
-      },
-      "1556613976053": {
-        "type": "latest-blog",
-        "blocks": {
-          "1556613976053-0": {
-            "type": "section_padding",
-            "settings": {
-              "section_padding_top": 40,
-              "section_padding_bottom": 40,
-              "section_padding_top_md": 30,
-              "section_padding_bottom_md": 30,
-              "section_padding_top_xs": 30,
-              "section_padding_bottom_xs": 0
-            }
-          }
-        },
-        "block_order": [
-          "1556613976053-0"
-        ],
-        "settings": {
-          "section_width": "default",
-          "section_title": "Latest <span>Blog<\/span>",
-          "section_sub_title": "There are many variations of passages of Lorem Ipsum available, but the majority have  suffered lebmid.",
-          "section_title_custom_color": true,
-          "section_title_color": "#333333",
-          "section_subtitle_color": "#222222",
-          "title_align": "text-center",
-          "section_title_font_size": "40",
-          "section_des_font_size": "14",
-          "blog_handle": "news",
-          "button_title": "",
-          "bgrid": "grid_1",
-          "blog_limit_handle": 3,
-          "content_align": "left",
-          "tab_arsoule_active": false,
-          "tab_arsoule_arrow_enable": false,
-          "product_column_handle": "4",
-          "product_column_handle_md": "6",
-          "product_column_handle_sm": "6",
-          "blog_image_enable": true,
-          "blog_title_enable": true,
-          "blog_comments_enable": true,
-          "blog_date_enable": true,
-          "blog_text_enable": true,
-          "blog_button_enable": false
         }
       },
       "single-product-tab": {
@@ -1888,641 +1666,6 @@
           "team_deg_color": "#333333"
         }
       },
-      "1573381978683": {
-        "type": "collection-banner",
-        "disabled": true,
-        "blocks": {
-          "1573381978683-0": {
-            "type": "banner",
-            "settings": {
-              "enable_left_pad": false,
-              "ban_col": "6",
-              "t1": "Mens Backpack",
-              "t1_color": "#1f2226",
-              "btn1_url": "shopify:\/\/collections\/all",
-              "text1_p": "style_2",
-              "show_img2": true,
-              "t3": "Womens <br>Backpack",
-              "t3_color": "#1f2226",
-              "btn2_url": "shopify:\/\/collections\/all",
-              "text2_p": "style_2"
-            }
-          },
-          "1573381978683-1": {
-            "type": "banner",
-            "settings": {
-              "enable_left_pad": false,
-              "ban_col": "6",
-              "t1": "Mens Backpack",
-              "t1_color": "#1f2226",
-              "btn1_url": "shopify:\/\/collections\/all",
-              "text1_p": "style_1",
-              "show_img2": true,
-              "t3": "Womens <br>Backpack",
-              "t3_color": "#1f2226",
-              "btn2_url": "shopify:\/\/collections\/all",
-              "text2_p": "style_2"
-            }
-          }
-        },
-        "block_order": [
-          "1573381978683-0",
-          "1573381978683-1"
-        ],
-        "settings": {
-          "section_width": "default",
-          "section_title": "New Arrivals",
-          "section_sub_title": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical",
-          "section_title_custom_color": false,
-          "section_title_color": "#1f2226",
-          "section_subtitle_color": "#5a5a5a",
-          "title_align": "text-center",
-          "section_title_font_size": "30",
-          "section_des_font_size": "14"
-        }
-      },
-      "1574077631702": {
-        "type": "brand-slider",
-        "disabled": true,
-        "blocks": {
-          "1574077631702-0": {
-            "type": "single_brand",
-            "settings": {}
-          },
-          "1574077631702-1": {
-            "type": "single_brand",
-            "settings": {}
-          },
-          "1574077631702-2": {
-            "type": "single_brand",
-            "settings": {}
-          },
-          "1574077631702-3": {
-            "type": "single_brand",
-            "settings": {}
-          },
-          "1574077631702-4": {
-            "type": "single_brand",
-            "settings": {}
-          },
-          "1574077631702-5": {
-            "type": "single_brand",
-            "settings": {}
-          },
-          "1574138081942": {
-            "type": "single_brand",
-            "settings": {}
-          },
-          "1574138085876": {
-            "type": "single_brand",
-            "settings": {}
-          }
-        },
-        "block_order": [
-          "1574077631702-0",
-          "1574077631702-1",
-          "1574077631702-2",
-          "1574077631702-3",
-          "1574077631702-4",
-          "1574077631702-5",
-          "1574138081942",
-          "1574138085876"
-        ],
-        "settings": {
-          "section_width": "default",
-          "brand_item_show": "5"
-        }
-      },
-      "1574246246086": {
-        "type": "promotion-banner",
-        "disabled": true,
-        "blocks": {
-          "1574246246086-0": {
-            "type": "section_padding",
-            "settings": {
-              "section_padding_top": 145,
-              "section_padding_bottom": 150,
-              "section_padding_top_md": 100,
-              "section_padding_bottom_md": 100,
-              "section_padding_top_xs": 80,
-              "section_padding_bottom_xs": 80
-            }
-          },
-          "1574246261306": {
-            "type": "promoton-content",
-            "settings": {
-              "content_product_column_handle": "6",
-              "t1": "35% off Black Monday",
-              "t2": "Lighting For Home.",
-              "des_text": "For all your new furniture, seating & storage needs, all at fantastic prices.",
-              "countdown_date": "",
-              "btn1": "SHOP NOW",
-              "btn1_url": "shopify:\/\/collections\/all",
-              "content_custom_color": true,
-              "bottom_title": "poppins_n4",
-              "bottom_title_font_size": "24",
-              "bottom_title_margin": 15,
-              "top_title": "poppins_n5",
-              "top_title_font_size": "55",
-              "top_title_margin": 20,
-              "des_text_font": "poppins_n4",
-              "des_text_font_size": "14",
-              "des_text_font_margin": 15,
-              "button_title": "poppins_n3",
-              "button_title_font_size": "14",
-              "button_title_margin": 10,
-              "border_radius_count": 50,
-              "t1_color": "#1f2226",
-              "t2_color": "#1f2226",
-              "des_text_color": "#1f2226",
-              "button_style": "default",
-              "button_border_radius": 0,
-              "btn1_color": "#1f2226",
-              "btn1_hover_color": "#1f2226",
-              "btn1_bg_color": "#ffffff",
-              "btn1_bg_hover_color": "#000000",
-              "btn1_border_color": "#96bf48",
-              "btn1_border_hover_color": "#000000"
-            }
-          },
-          "1574247238548": {
-            "type": "section_background",
-            "settings": {
-              "section_bg_color": "#f2f2f2"
-            }
-          }
-        },
-        "block_order": [
-          "1574246246086-0",
-          "1574246261306",
-          "1574247238548"
-        ],
-        "settings": {
-          "section_width": "default",
-          "content_position": "left-def",
-          "content_align": "text-left"
-        }
-      },
-      "1574250394151": {
-        "type": "text-promotion-banner",
-        "disabled": true,
-        "blocks": {
-          "1574250394151-0": {
-            "type": "section_padding",
-            "settings": {
-              "section_padding_top": 100,
-              "section_padding_bottom": 100,
-              "section_padding_top_md": 80,
-              "section_padding_bottom_md": 80,
-              "section_padding_top_xs": 80,
-              "section_padding_bottom_xs": 80
-            }
-          },
-          "1574250481109": {
-            "type": "section_background",
-            "settings": {
-              "section_bg_color": "#ffffff"
-            }
-          }
-        },
-        "block_order": [
-          "1574250394151-0",
-          "1574250481109"
-        ],
-        "settings": {
-          "section_width": "default",
-          "content_position": "left",
-          "content_align": "left",
-          "t1": "35% off  Black Monday",
-          "t2": "Best Lighting For Home.",
-          "t3": "Subscribe our newsletter and get all latest news abot our latest <br> products, promotions, offers and discount",
-          "btn1": "SHOP NOW",
-          "btn1_url": "shopify:\/\/collections\/all",
-          "t1_color": "#f01414",
-          "t2_color": "#7df220",
-          "t3_color": "#1f2226",
-          "btn1_color": "#1584f3",
-          "btn1_border_color": "#ed1313"
-        }
-      },
-      "1574333344144": {
-        "type": "slider-boxed",
-        "blocks": {
-          "1574333344144-0": {
-            "type": "slide",
-            "settings": {
-              "content_align": "center",
-              "content_animation": "fadeInUp",
-              "title1": "Winter Collections",
-              "description": "Lorem Ipsum is simply dummy text of the <br> printing and typesetting industry.",
-              "btn": "SHOP NOW",
-              "show_icon": true,
-              "btn_url": "shopify:\/\/collections\/all",
-              "slider_content_custom_style": true,
-              "header_font_slider": "quantico_n4",
-              "title1_font_size": "50",
-              "heading_line_height": 60,
-              "title_margin_bottom": 10,
-              "paragraph_font_slider": "open_sans_n4",
-              "description_font_size": "16",
-              "des_line_height": 27,
-              "des_margin_bottom": 20,
-              "button_font_slider": "open_sans_n4",
-              "title1_color": "#1f2226",
-              "description_color": "#333333",
-              "button_margin_top": 35,
-              "btn_border_radius": 0,
-              "btn_font_size": "14",
-              "btn_color": "#1f2226",
-              "btn_bg_color": "rgba(0,0,0,0)",
-              "btn_border_color": "#000000",
-              "btn_hover_color": "#ffffff",
-              "btn_hover_bg_color": "#ff9609",
-              "btn_hover_border_color": "#ff9609"
-            }
-          },
-          "1574333344144-1": {
-            "type": "slide",
-            "settings": {
-              "content_align": "left",
-              "content_animation": "fadeInLeft",
-              "title1": "Looky eye Rose",
-              "description": "Lorem Ipsum is simply dummy text of the <br> printing and typesetting industry.",
-              "btn": "SHOP NOW",
-              "show_icon": true,
-              "btn_url": "shopify:\/\/collections\/all",
-              "slider_content_custom_style": true,
-              "header_font_slider": "quantico_n4",
-              "title1_font_size": "50",
-              "heading_line_height": 60,
-              "title_margin_bottom": 10,
-              "paragraph_font_slider": "open_sans_n4",
-              "description_font_size": "16",
-              "des_line_height": 27,
-              "des_margin_bottom": 20,
-              "button_font_slider": "open_sans_n4",
-              "title1_color": "#1f2226",
-              "description_color": "#333333",
-              "button_margin_top": 35,
-              "btn_border_radius": 0,
-              "btn_font_size": "14",
-              "btn_color": "#1f2226",
-              "btn_bg_color": "rgba(0,0,0,0)",
-              "btn_border_color": "#000000",
-              "btn_hover_color": "#ffffff",
-              "btn_hover_bg_color": "#ff9609",
-              "btn_hover_border_color": "#ff9609"
-            }
-          }
-        },
-        "block_order": [
-          "1574333344144-0",
-          "1574333344144-1"
-        ],
-        "settings": {
-          "section_width": "box_width",
-          "sec_bg_color": "#effafa",
-          "banner_position": "right",
-          "slider_content_col": "9",
-          "p_top": "570",
-          "nav_style": "style_1",
-          "nav_custom_style": false,
-          "controlnav_color": "#1f2226",
-          "controlnav_bg_color": "#ffffff",
-          "controlnav_border_color": "#e1e2e2",
-          "hover_controlnav_color": "#ffffff",
-          "hover_controlnav_bg_color": "#ff3535",
-          "hover_controlnav_border_color": "#ff3535",
-          "banner_img_enable": true,
-          "banner_img_col": "3",
-          "banner_btn_url": "shopify:\/\/collections\/all",
-          "banner_img_enable_2": true,
-          "banner_btn_url_2": "shopify:\/\/collections\/all",
-          "banner_img_enable_3": false,
-          "banner_btn_url_3": "shopify:\/\/collections\/all"
-        }
-      },
-      "1574662142656": {
-        "type": "banner-small-product-collection",
-        "blocks": {
-          "1574662142656-1": {
-            "type": "collection",
-            "settings": {
-              "collection_title": "Top Ratted",
-              "featured_product_handle": "best-seller",
-              "featured_product_limit_handle": 10,
-              "collection_column": 4,
-              "collection_column_md": 6,
-              "collection_column_sm": 12
-            }
-          },
-          "1576390157086": {
-            "type": "collection",
-            "settings": {
-              "collection_title": "Best Seller",
-              "featured_product_handle": "discount",
-              "featured_product_limit_handle": 8,
-              "collection_column": 4,
-              "collection_column_md": 6,
-              "collection_column_sm": 6
-            }
-          },
-          "1574662142656-0": {
-            "type": "banner",
-            "settings": {
-              "banner_sub_title": "BEAUTIFUL",
-              "banner_title": "Wedding Flower",
-              "banner_button_title": "Shop Now",
-              "banner_column": 4,
-              "banner_column_md": 6,
-              "banner_column_sm": 6,
-              "banner_text_color_enable": false,
-              "sub_title_color": "#f21919",
-              "title_color": "#7efa0c",
-              "button_color": "#222222",
-              "button_hover_color": "#c29958"
-            }
-          },
-          "f3616d2a-9e2f-498e-bce8-94bf14b78626": {
-            "type": "section_padding",
-            "settings": {
-              "section_padding_top": 50,
-              "section_padding_bottom": 80,
-              "section_padding_top_md": 40,
-              "section_padding_bottom_md": 60,
-              "section_padding_top_xs": 30,
-              "section_padding_bottom_xs": 50
-            }
-          }
-        },
-        "block_order": [
-          "1574662142656-1",
-          "1576390157086",
-          "1574662142656-0",
-          "f3616d2a-9e2f-498e-bce8-94bf14b78626"
-        ],
-        "settings": {
-          "section_width": "default",
-          "tab_arsoule_arrow_enable": true,
-          "product_casoule_row": 4
-        }
-      },
-      "1574931492712": {
-        "type": "slider-special-banner",
-        "disabled": true,
-        "blocks": {
-          "1574931492712-0": {
-            "type": "slide",
-            "settings": {
-              "content_position": "center",
-              "content_align": "center",
-              "content_animation": "fadeInLeft",
-              "title_top": "Upto 30% Off",
-              "title1": "Wooden Craft",
-              "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It is a long established fact that a reader.",
-              "btn": "SHOP NOW",
-              "show_icon": true,
-              "btn_url": "shopify:\/\/collections\/all"
-            }
-          }
-        },
-        "block_order": [
-          "1574931492712-0"
-        ],
-        "settings": {
-          "section_width": "default",
-          "sec_bg_color": "#effafa",
-          "slider_arsoule_active": true,
-          "p_top": "750",
-          "slider_content_custom_style": false,
-          "content_bg_color": "#b94d4d",
-          "special_bg_width": 60,
-          "header_font_top": "poppins_n6",
-          "header_font_top_size": "30",
-          "header_font_top_line_height": 30,
-          "header_font_top_margin_bottom": 10,
-          "header_font_slider": "poppins_n6",
-          "title1_font_size": "80",
-          "heading_line_height": 70,
-          "title_margin_bottom": 10,
-          "paragraph_font_slider": "poppins_n4",
-          "description_font_size": "16",
-          "des_line_height": 27,
-          "des_margin_bottom": 20,
-          "button_font_slider": "poppins_n4",
-          "header_top_color": "#1f2226",
-          "title1_color": "#1f2226",
-          "description_color": "#333333",
-          "button_margin_top": 35,
-          "btn_border_radius": 0,
-          "btn_font_size": "13",
-          "btn_color": "#1f2226",
-          "btn_bg_color": "rgba(0,0,0,0)",
-          "btn_border_color": "#000000",
-          "btn_hover_color": "#ffffff",
-          "btn_hover_bg_color": "#ff3535",
-          "btn_hover_border_color": "#ff3535",
-          "nav_style": "style_1",
-          "controlnav_color": "#1f2226",
-          "controlnav_bg_color": "#ffffff",
-          "controlnav_border_color": "#e1e2e2",
-          "hover_controlnav_color": "#ffffff",
-          "hover_controlnav_bg_color": "#ff3535",
-          "hover_controlnav_border_color": "#ff3535"
-        }
-      },
-      "1575095967197": {
-        "type": "video-slider",
-        "disabled": true,
-        "settings": {
-          "section_width": "default",
-          "slider_custom_style_enable": true,
-          "video_slider_padding": "250",
-          "video_slider_height": "700",
-          "youtube_video_url": "KcAca6CEBN0",
-          "slider_opacity_color": "#141f1f",
-          "slider_opacity": 0.5,
-          "slider_autoplay": "false",
-          "video_sound": "true",
-          "slider_content_enable": true,
-          "slider_title": "Summer Trendy Collection",
-          "heading_font_handle": "quantico_n4",
-          "slider_heading_font_size": "70",
-          "heading_line_height": 80,
-          "header_font_top_margin_bottom": 10,
-          "title1_color": "#ffffff",
-          "slider_content": "A good looking, comfortable traditional collection",
-          "content_font_handle": "open_sans_n4",
-          "slider_content_font_size": "20",
-          "des_line_height": 30,
-          "des_margin_bottom": 20,
-          "description_color": "#ffffff",
-          "button_margin_top": 35,
-          "slider_button": "Button Name",
-          "slider_button_font_size": "14",
-          "button_font_handle": "open_sans_n4",
-          "btn_border_radius": 30,
-          "btn_color": "#ca6877",
-          "btn_bg_color": "#ffffff",
-          "btn_border_color": "#ffffff",
-          "btn_hover_color": "#ffffff",
-          "btn_hover_bg_color": "#ca6877",
-          "btn_hover_border_color": "#ca6877"
-        }
-      },
-      "1575175239133": {
-        "type": "instagram-feed",
-        "disabled": true,
-        "blocks": {
-          "1575175239133-0": {
-            "type": "section_padding",
-            "settings": {
-              "section_padding_top": 0,
-              "section_padding_bottom": 100,
-              "section_padding_top_md": 0,
-              "section_padding_bottom_md": 80,
-              "section_padding_top_xs": 0,
-              "section_padding_bottom_xs": 60
-            }
-          }
-        },
-        "block_order": [
-          "1575175239133-0"
-        ],
-        "settings": {
-          "section_width": "default",
-          "section_title": "Instagram Feed",
-          "section_sub_title": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical",
-          "section_title_custom_color": false,
-          "section_title_color": "#1f2226",
-          "section_subtitle_color": "#5a5a5a",
-          "title_align": "text-center",
-          "section_title_font_size": "30",
-          "section_des_font_size": "14",
-          "instafeed_user_id": "6665768655",
-          "instafeed_access_token": "6665768655.1677ed0.313e6c96807c45d8900b4f680650dee5",
-          "instafeed_limit": 8,
-          "image_resolution": "standard_resolution"
-        }
-      },
-      "1575267084478": {
-        "type": "text-promotion-banner",
-        "disabled": true,
-        "blocks": {
-          "1575267084478-0": {
-            "type": "section_padding",
-            "settings": {
-              "section_padding_top": 150,
-              "section_padding_bottom": 400,
-              "section_padding_top_md": 80,
-              "section_padding_bottom_md": 80,
-              "section_padding_top_xs": 80,
-              "section_padding_bottom_xs": 80
-            }
-          },
-          "1575267149495": {
-            "type": "section_background",
-            "settings": {
-              "section_bg_color": "#ffffff"
-            }
-          }
-        },
-        "block_order": [
-          "1575267084478-0",
-          "1575267149495"
-        ],
-        "settings": {
-          "section_width": "default",
-          "content_position": "center",
-          "content_align": "center",
-          "t1": "35% off Black Monday",
-          "t2": "Lighting For Home.",
-          "t3": "Subscribe our newsletter and get all latest news abot our latest <br> products, promotions, offers and discount",
-          "btn1": "SHOP NOW",
-          "btn1_url": "shopify:\/\/collections\/all",
-          "t1_color": "#1f2226",
-          "t2_color": "#1f2226",
-          "t3_color": "#1f2226",
-          "btn1_color": "#1f2226",
-          "btn1_border_color": "#1f2226"
-        }
-      },
-      "1575287126262": {
-        "type": "best-collection",
-        "disabled": true,
-        "blocks": {
-          "1575287126262-0": {
-            "type": "banner",
-            "settings": {
-              "content_align": "text-left",
-              "service_icon": "sli sli-magnifier",
-              "icon_font_size": "30",
-              "t1": "BLACK FRIDAY",
-              "t2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor inci ut labore et dolore",
-              "btn1_url": "shopify:\/\/collections\/all",
-              "banner_custom_color": true,
-              "ft_icon_color": "#757575",
-              "t1_color": "#146fe9",
-              "t1_color_hover": "#c399d1",
-              "t2_color": "#f2d110"
-            }
-          },
-          "1575287126262-1": {
-            "type": "banner",
-            "settings": {
-              "content_align": "text-center",
-              "service_icon": "sli sli-magnifier",
-              "icon_font_size": "30",
-              "t1": "BLACK FRIDAY",
-              "t2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor inci ut labore et dolore",
-              "btn1_url": "shopify:\/\/collections\/all",
-              "banner_custom_color": false,
-              "ft_icon_color": "#757575",
-              "t1_color": "#1f2226",
-              "t1_color_hover": "#1f2226",
-              "t2_color": "#1f2226"
-            }
-          },
-          "1575345632834": {
-            "type": "banner",
-            "settings": {
-              "content_align": "text-right",
-              "service_icon": "sli sli-magnifier",
-              "icon_font_size": "30",
-              "t1": "BLACK FRIDAY",
-              "t2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor inci ut labore et dolore",
-              "btn1_url": "shopify:\/\/collections\/all",
-              "banner_custom_color": false,
-              "ft_icon_color": "#757575",
-              "t1_color": "#1f2226",
-              "t1_color_hover": "#1f2226",
-              "t2_color": "#1f2226"
-            }
-          }
-        },
-        "block_order": [
-          "1575287126262-0",
-          "1575287126262-1",
-          "1575345632834"
-        ],
-        "settings": {
-          "section_width": "default",
-          "section_title": "New Arrivals",
-          "section_sub_title": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical",
-          "section_title_custom_color": false,
-          "section_title_color": "#1f2226",
-          "section_subtitle_color": "#5a5a5a",
-          "title_align": "text-center",
-          "section_title_font_size": "30",
-          "section_des_font_size": "14",
-          "tab_arsoule_active": true,
-          "tab_arsoule_arrow_enable": true,
-          "product_column_handle": "3",
-          "product_column_handle_md": "4",
-          "product_column_handle_sm": "6",
-          "img_border_radius": 0
-        }
-      },
       "service": {
         "type": "service",
         "blocks": {
@@ -2573,123 +1716,6 @@
           "service_col": "4",
           "ft_title_color": "#242424",
           "ft_content_color": "#757575"
-        }
-      },
-      "1576746468921": {
-        "type": "slider",
-        "disabled": true,
-        "blocks": {
-          "1576746468921-1": {
-            "type": "slide",
-            "settings": {
-              "content_position": "left",
-              "content_align": "left",
-              "content_animation": "fadeInLeft",
-              "slider_content_col": "8",
-              "slider_img_enable": false,
-              "slider_img_col": "12",
-              "slider_content_custom_style": true,
-              "sec_bg_color": "#effafa",
-              "title_top": "A Different",
-              "header_top_color": "#ff5151",
-              "header_font_top": "quantico_n4",
-              "header_font_top_size": "40",
-              "header_font_top_line_height": 50,
-              "header_font_top_margin_bottom": 10,
-              "title1": "Online Flower Shop",
-              "title1_color": "#1f2226",
-              "header_font_slider": "quantico_n4",
-              "title1_font_size": "70",
-              "heading_line_height": 70,
-              "title_margin_bottom": 15,
-              "description": "There are many variations of passages of Lorem Ipsum available, but <br>  the majority have suffered alteration in some form, by injected humour.",
-              "description_color": "#333333",
-              "paragraph_font_slider": "open_sans_n4",
-              "description_font_size": "16",
-              "des_line_height": 27,
-              "des_margin_bottom": 20,
-              "btn": "SHOP NOW",
-              "show_icon": false,
-              "btn_url": "shopify:\/\/collections\/all",
-              "button_font_slider": "open_sans_n4",
-              "button_margin_top": 35,
-              "btn_border_radius": 0,
-              "btn_font_size": "14",
-              "btn_color": "#1f2226",
-              "btn_bg_color": "rgba(0,0,0,0)",
-              "btn_border_color": "#000000",
-              "btn_hover_color": "#ffffff",
-              "btn_hover_bg_color": "#ff3535",
-              "btn_hover_border_color": "#ff3535"
-            }
-          },
-          "1576746468921-0": {
-            "type": "slide",
-            "settings": {
-              "content_position": "left",
-              "content_align": "left",
-              "content_animation": "fadeInLeft",
-              "slider_content_col": "8",
-              "slider_img_enable": false,
-              "slider_img_col": "6",
-              "slider_content_custom_style": true,
-              "sec_bg_color": "#effafa",
-              "title_top": "A Unique",
-              "header_top_color": "#ff5151",
-              "header_font_top": "quantico_n4",
-              "header_font_top_size": "40",
-              "header_font_top_line_height": 50,
-              "header_font_top_margin_bottom": 10,
-              "title1": "Winter <span>Flower<\/span> Shop",
-              "title1_color": "#1f2226",
-              "header_font_slider": "quantico_n4",
-              "title1_font_size": "70",
-              "heading_line_height": 70,
-              "title_margin_bottom": 15,
-              "description": "There are many variations of passages of Lorem Ipsum available, but <br>  the majority have suffered alteration in some form, by injected humour.",
-              "description_color": "#333333",
-              "paragraph_font_slider": "open_sans_n4",
-              "description_font_size": "16",
-              "des_line_height": 27,
-              "des_margin_bottom": 20,
-              "btn": "SHOP NOW",
-              "show_icon": false,
-              "btn_url": "shopify:\/\/collections\/all",
-              "button_font_slider": "open_sans_n4",
-              "button_margin_top": 35,
-              "btn_border_radius": 0,
-              "btn_font_size": "14",
-              "btn_color": "#1f2226",
-              "btn_bg_color": "rgba(0,0,0,0)",
-              "btn_border_color": "#000000",
-              "btn_hover_color": "#ffffff",
-              "btn_hover_bg_color": "#ff3535",
-              "btn_hover_border_color": "#ff3535"
-            }
-          }
-        },
-        "block_order": [
-          "1576746468921-1",
-          "1576746468921-0"
-        ],
-        "settings": {
-          "section_width": "default",
-          "content_width": "default",
-          "slider_height_opt": "fixed_height",
-          "p_top": "750",
-          "nav_style": "style_2",
-          "nav_custom_style": true,
-          "nav_border_radius": 0,
-          "controlnav_color": "#ffffff",
-          "controlnav_bg_color": "#e1e1e1",
-          "controlnav_border_color": "#e1e1e1",
-          "hover_controlnav_color": "#ffffff",
-          "hover_controlnav_bg_color": "#ff5151",
-          "hover_controlnav_border_color": "#ff5151",
-          "dot_style": "dot_hide",
-          "dot_custom_style": false,
-          "dot_color": "#96bf48",
-          "dot_active_color": "#96bf48"
         }
       },
       "footer_1": {
@@ -2974,7 +2000,7 @@
               "widget_col": "2",
               "widget_col_md": "6",
               "title": "Quick Links",
-              "ft_menu_handle": "support"
+              "ft_menu_handle": ""
             }
           },
           "1578475915090": {
@@ -2993,10 +2019,15 @@
               "widget_col_md": "6",
               "title": "Follow Us On",
               "social1": "facebook",
+              "social1_url": "",
               "social2": "twitter",
+              "social2_url": "",
               "social3": "instagram",
+              "social3_url": "",
               "social4": "youtube",
-              "social5": "pinterest"
+              "social4_url": "",
+              "social5": "pinterest",
+              "social5_url": ""
             }
           },
           "1578476007695": {
@@ -3037,41 +2068,8 @@
           "footer_font_drop_mega_size": "16"
         }
       },
-      "1578983883462": {
-        "type": "video-banner",
-        "disabled": true,
-        "blocks": {
-          "1578983883462-0": {
-            "type": "section_padding",
-            "settings": {
-              "section_padding_top": 0,
-              "section_padding_bottom": 100,
-              "section_padding_top_md": 0,
-              "section_padding_bottom_md": 80,
-              "section_padding_top_xs": 0,
-              "section_padding_bottom_xs": 60
-            }
-          }
-        },
-        "block_order": [
-          "1578983883462-0"
-        ],
-        "settings": {
-          "section_width": "default",
-          "section_title": "Section Title Here",
-          "section_sub_title": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical",
-          "section_title_color": "#1f2226",
-          "section_subtitle_color": "#5a5a5a",
-          "title_align": "text-center",
-          "section_title_font_size": "30",
-          "section_des_font_size": "14",
-          "video_type_handle": "popup_banner",
-          "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
-        }
-      },
       "1581335794606": {
         "type": "slider-boxed",
-        "disabled": true,
         "blocks": {
           "1581335794606-0": {
             "type": "slide",
@@ -3167,169 +2165,6 @@
           "banner_btn_url_3": "shopify:\/\/collections\/all"
         }
       },
-      "1581764740280": {
-        "type": "about-testimonial",
-        "disabled": true,
-        "blocks": {
-          "1581764740280-0": {
-            "type": "testimonial",
-            "settings": {
-              "comments": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit.",
-              "commentators": "Hester Perkins"
-            }
-          },
-          "1581764740280-1": {
-            "type": "testimonial",
-            "settings": {
-              "comments": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit.",
-              "commentators": "Hester Perkins"
-            }
-          },
-          "1581764740280-2": {
-            "type": "section_padding",
-            "settings": {
-              "section_padding_top": 80,
-              "section_padding_bottom": 95,
-              "section_padding_top_md": 0,
-              "section_padding_bottom_md": 80,
-              "section_padding_top_xs": 0,
-              "section_padding_bottom_xs": 60
-            }
-          },
-          "1581764774420": {
-            "type": "section_background",
-            "settings": {
-              "section_bg_color": "#e1d0d0"
-            }
-          }
-        },
-        "block_order": [
-          "1581764740280-0",
-          "1581764740280-1",
-          "1581764740280-2",
-          "1581764774420"
-        ],
-        "settings": {
-          "section_width": "default",
-          "testi_custom_color": false,
-          "comment_color": "#333333",
-          "commentators_color": "#1f2226"
-        }
-      },
-      "1581765762327": {
-        "type": "about-team",
-        "disabled": true,
-        "blocks": {
-          "1581765762327-0": {
-            "type": "team_member",
-            "settings": {
-              "member_name": "Mr. Mike Banding",
-              "member_desig": "Manager",
-              "show_fb": true,
-              "show_twitter": true,
-              "show_instagram": true
-            }
-          },
-          "1581765762327-1": {
-            "type": "team_member",
-            "settings": {
-              "member_name": "Mr. Mike Banding",
-              "member_desig": "Manager",
-              "show_fb": true,
-              "show_twitter": true,
-              "show_instagram": true
-            }
-          },
-          "1581765762327-2": {
-            "type": "team_member",
-            "settings": {
-              "member_name": "Mr. Mike Banding",
-              "member_desig": "Manager",
-              "show_fb": true,
-              "show_twitter": true,
-              "show_instagram": true
-            }
-          },
-          "1581765762327-3": {
-            "type": "team_member",
-            "settings": {
-              "member_name": "Mr. Mike Banding",
-              "member_desig": "Manager",
-              "show_fb": true,
-              "show_twitter": true,
-              "show_instagram": true
-            }
-          }
-        },
-        "block_order": [
-          "1581765762327-0",
-          "1581765762327-1",
-          "1581765762327-2",
-          "1581765762327-3"
-        ],
-        "settings": {
-          "show_team_section": true,
-          "section_width": "default",
-          "tab_arsoule_active": true,
-          "tab_arsoule_arrow_enable": true,
-          "product_casoule_row": 1,
-          "product_column_handle": "3",
-          "product_column_handle_md": "4",
-          "product_column_handle_sm": "6",
-          "team_title": "Team Members",
-          "team_subtitle": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical",
-          "banner_custom_color": false,
-          "title_align": "text-center",
-          "section_title_font_size": "30",
-          "section_des_font_size": "14",
-          "section_title_color": "#1f2226",
-          "section_subtitle_color": "#1f2226",
-          "team_name_color": "#1f2226",
-          "team_deg_color": "#1f2226"
-        }
-      },
-      "1581767588546": {
-        "type": "brand-slider",
-        "disabled": true,
-        "blocks": {
-          "1581767588546-0": {
-            "type": "single_brand",
-            "settings": {}
-          },
-          "1581767588546-1": {
-            "type": "single_brand",
-            "settings": {}
-          },
-          "1581767588546-2": {
-            "type": "single_brand",
-            "settings": {}
-          },
-          "1581767588546-3": {
-            "type": "single_brand",
-            "settings": {}
-          },
-          "1581767588546-4": {
-            "type": "single_brand",
-            "settings": {}
-          },
-          "1581767588546-5": {
-            "type": "single_brand",
-            "settings": {}
-          }
-        },
-        "block_order": [
-          "1581767588546-0",
-          "1581767588546-1",
-          "1581767588546-2",
-          "1581767588546-3",
-          "1581767588546-4",
-          "1581767588546-5"
-        ],
-        "settings": {
-          "section_width": "default",
-          "brand_item_show": "5"
-        }
-      },
       "1582523983801": {
         "type": "featured-collection",
         "blocks": {
@@ -3382,33 +2217,115 @@
       "recommended": {
         "type": "recommended",
         "settings": {}
+      },
+      "1636652873058a5b2f": {
+        "type": "brand-slider",
+        "blocks": {
+          "1636652873058a5b2f-0": {
+            "type": "single_brand",
+            "settings": {
+              "brand_url": ""
+            }
+          },
+          "1636652873058a5b2f-1": {
+            "type": "single_brand",
+            "settings": {
+              "brand_url": ""
+            }
+          },
+          "1636652873058a5b2f-2": {
+            "type": "single_brand",
+            "settings": {
+              "brand_url": ""
+            }
+          },
+          "1636652873058a5b2f-3": {
+            "type": "single_brand",
+            "settings": {
+              "brand_url": ""
+            }
+          },
+          "1636652873058a5b2f-4": {
+            "type": "single_brand",
+            "settings": {
+              "brand_url": ""
+            }
+          },
+          "1636652873058a5b2f-5": {
+            "type": "single_brand",
+            "settings": {
+              "brand_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "1636652873058a5b2f-0",
+          "1636652873058a5b2f-1",
+          "1636652873058a5b2f-2",
+          "1636652873058a5b2f-3",
+          "1636652873058a5b2f-4",
+          "1636652873058a5b2f-5"
+        ],
+        "settings": {
+          "section_width": "default",
+          "brand_item_show": "5"
+        }
+      },
+      "1636692665d1b76b0f": {
+        "type": "latest-blog",
+        "blocks": {
+          "1636692665d1b76b0f-0": {
+            "type": "section_padding",
+            "settings": {
+              "section_padding_top": 0,
+              "section_padding_bottom": 100,
+              "section_padding_top_md": 0,
+              "section_padding_bottom_md": 80,
+              "section_padding_top_xs": 0,
+              "section_padding_bottom_xs": 60
+            }
+          }
+        },
+        "block_order": [
+          "1636692665d1b76b0f-0"
+        ],
+        "settings": {
+          "section_width": "default",
+          "section_title": "New Blog Posts",
+          "section_sub_title": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical",
+          "section_title_custom_color": false,
+          "section_title_color": "#1f2226",
+          "section_subtitle_color": "#5a5a5a",
+          "title_align": "text-center",
+          "section_title_font_size": "30",
+          "section_des_font_size": "14",
+          "blog_handle": "",
+          "button_title": "Read More",
+          "bgrid": "grid_1",
+          "blog_limit_handle": 6,
+          "content_align": "left",
+          "tab_arsoule_active": true,
+          "tab_arsoule_arrow_enable": true,
+          "product_column_handle": "3",
+          "product_column_handle_md": "4",
+          "product_column_handle_sm": "6",
+          "blog_image_enable": true,
+          "blog_title_enable": true,
+          "blog_comments_enable": true,
+          "blog_date_enable": true,
+          "blog_text_enable": true,
+          "blog_button_enable": true
+        }
       }
     },
     "content_for_index": [
-      "1574333344144",
-      "1575095967197",
-      "1576746468921",
+      "1581335794606",
       "1556613203054",
       "1556530642117",
       "1556604411806",
-      "1574662142656",
-      "1556606067346",
       "1582523983801",
-      "1556613976053",
-      "1574931492712",
-      "1556516965682",
-      "1573381978683",
-      "1574246246086",
-      "1574077631702",
-      "1574250394151",
-      "1575175239133",
-      "1575267084478",
-      "1575287126262",
-      "1578983883462",
-      "1581335794606",
-      "1581764740280",
-      "1581765762327",
-      "1581767588546"
+      "1636652873058a5b2f",
+      "1636692665d1b76b0f"
     ]
   },
   "presets": {
