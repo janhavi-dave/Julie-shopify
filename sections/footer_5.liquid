@@ -5,7 +5,14 @@
     <div class="footer-top-2 pb-20 footer_style_5">
       <div class="row">
         {%- for block in section.blocks -%}{%- case block.type -%}
-        
+        {%- when 'newsletter' -%}
+        <div class="col-lg-{{ block.settings.widget_col }} col-md-{{ block.settings.widget_col_md }} col-sm-12 col-12">
+          <div class="footer-widget mb-40">
+            {%- if block.settings.logo -%}
+            <a class="footer_logo mb-30" href="/">
+              <img src="{{ block.settings.logo | img_url: 'medium' }}" alt="{{ image.alt }}">
+            </a>
+            {%- endif -%}
         {% when 'about_info' %}
         <div class="col-lg-{{ block.settings.widget_col }} col-md-{{ block.settings.widget_col_md }} col-sm-12 col-12">
           <div class="footer-widget mb-40">
@@ -75,7 +82,7 @@
             </div>
           </div>
         </div>
-        
+          
         {%- when 'ft_social' -%}
         <div class="col-lg-{{ block.settings.widget_col }} col-md-{{ block.settings.widget_col_md }} col-sm-6 col-6">
           <div class="footer-widget mb-40">
@@ -294,6 +301,62 @@
 
 	],
     "blocks": [
+    {
+			"type": "about_info",
+			"name": "helllo Info",
+			"settings": [
+                {
+                    "type": "select",
+                    "id": "widget_col",
+                    "label": "Select Column",
+                    "options": [
+                        {
+                            "label": "2",
+                            "value": "2"
+                        },
+                        {
+                            "label": "3",
+                            "value": "3"
+                        },
+                        {
+                            "label": "4",
+                            "value": "4"
+                        },
+                        {
+                            "label": "5",
+                            "value": "5"
+                        },
+                        {
+                            "label": "6",
+                            "value": "6"
+                        },
+                        {
+                            "label": "7",
+                            "value": "7"
+                        },
+                        {
+                            "label": "8",
+                            "value": "8"
+                        },
+                        {
+                            "label": "9",
+                            "value": "9"
+                        },
+                        {
+                            "label": "10",
+                            "value": "10"
+                        },
+                        {
+                            "label": "11",
+                            "value": "11"
+                        },
+                        {
+                            "label": "12",
+                            "value": "12"
+                        }
+                    ],
+                    "default": "6"
+                },
 		{
 			"type": "about_info",
 			"name": "About Info",
