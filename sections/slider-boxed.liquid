@@ -1,5 +1,5 @@
 <div class="box-slider-wrapper" id="section-{{ section.id }}" data-section="heroOwlSlider">
-  <div class="{% if section.settings.section_width == 'full_width' %}container {% elsif section.settings.section_width == 'box_width' %}container section-padding-1{% elsif section.settings.section_width == 'default' %}container {% endif %}">
+  <div class="{% if section.settings.section_width == 'full_width' %}container-fluid {% elsif section.settings.section_width == 'box_width' %}container-fluid section-padding-1{% elsif section.settings.section_width == 'default' %}container {% endif %}">
     <div class="row {% if section.settings.banner_position == 'left' %} flex-row-reverse{% endif %}">
 
       <div class="col-md-{{section.settings.slider_content_col}} col-sm-12 col-12">
@@ -166,18 +166,30 @@
       <div class="col-md-12 col-sm-12 col-12">
         
         <div class="slider-banner-img">
+          <!-- {%- if section.settings.banner_img -%} -->
           <a href="{{ section.settings.banner_btn_url }}"><img src="{{ section.settings.banner_img | img_url: 'master' }}" alt="{{ image.alt }}"></a>
+          <!-- {%- else -%} -->
+          <!-- <img src="https://via.placeholder.com/370x270" alt="{{ image.alt }}"> -->
+          <!-- {%- endif -%} -->
         </div>
         
         {%- if section.settings.banner_img_enable_2 -%}
         <div class="slider-banner-img">
+          <!-- {%- if section.settings.banner_img_2 -%} -->
           <a href="{{ section.settings.banner_btn_url_2 }}"><img src="{{ section.settings.banner_img_2 | img_url: 'master' }}" alt="{{ image.alt }}"></a>
+          <!-- {%- else -%} -->
+          <!-- <img src="https://via.placeholder.com/370x270" alt="{{ image.alt }}"> -->
+          <!-- {%- endif -%} -->
         </div>
         {%- endif -%}
         
         {%- if section.settings.banner_img_enable_3 -%}
         <div class="slider-banner-img">
+          <!-- {%- if section.settings.banner_img_3 -%} -->
           <a href="{{ section.settings.banner_btn_url_3 }}"><img src="{{ section.settings.banner_img_3 | img_url: 'master' }}" alt="{{ image.alt }}"></a>
+          <!-- {%- else -%} -->
+          <!-- <img src="https://via.placeholder.com/370x270" alt="{{ image.alt }}"> -->
+          <!-- {%- endif -%} -->
         </div>
         {%- endif -%}
         
@@ -318,7 +330,7 @@
                           "value": "12"
                         }
                     ],
-                    "default": "8"
+                    "default": "12"
                 },
         {
           "type": "text",
