@@ -1,6 +1,6 @@
 <header class="header-area sticky-bar {% if template == 'index' %} {{ section.settings.enable_hea_transprant}} {%- endif -%} {{ section.settings.menu_position}}">
   <div class="main-header-wrap">
-  <div class="{% if section.settings.section_width == 'full_width' %}container-fluid {% elsif section.settings.section_width == 'box_width' %}container-fluid section-padding-1{% elsif section.settings.section_width == 'default' %}container default {% endif %}">
+  <div class="{% if section.settings.section_width == 'full_width' %}container {% elsif section.settings.section_width == 'box_width' %}container  section-padding-1{% elsif section.settings.section_width == 'default' %}container default {% endif %}">
    
       <div class="row">        
         <div class="col-xl-2 col-lg-2">          

@@ -1,7 +1,7 @@
 {%- assign sset = section.settings -%}
 
 <div class="feature-area" id="section-{{ section.id }}">
-  <div class="{% if section.settings.section_width == 'full_width' %}container-fluid {% elsif section.settings.section_width == 'box_width' %}container-fluid section-padding-1{% elsif section.settings.section_width == 'default' %}container default {% endif %}">
+  <div class="{% if section.settings.section_width == 'full_width' %}container {% elsif section.settings.section_width == 'box_width' %}container section-padding-1{% elsif section.settings.section_width == 'default' %}container default {% endif %}">
       <div class="row">
       {%- for block in section.blocks -%}
       {%- case block.type -%}
@@ -24,7 +24,7 @@
             <img src="{{ bset.service_img | img_url: 'small' }}" alt="{{ image.alt }}">
             
             {%- else -%}
-            <img src="https://via.placeholder.com/100x100" alt="{{ image.alt }}">
+            <img src="https://via.placeholder.com/50x50" alt="{{ image.alt }}">
             {%- endif -%}
             
           </div>
@@ -56,7 +56,7 @@
             <img src="{{ bset.service_img | img_url: 'small' }}" alt="{{ image.alt }}">
             
             {%- else -%}
-            <img src="https://via.placeholder.com/100x100" alt="{{ image.alt }}">
+            <img src="https://via.placeholder.com/50x50" alt="{{ image.alt }}">
             {%- endif -%}
             
           </div>
@@ -183,13 +183,13 @@
                     "type": "text",
                     "id": "title",
                     "label": "Title",
-                    "default": "Free Shipping"
+                    "default": "Free Shipping Worldwide"
                 },
 				{
 					"type": "textarea",
 					"id": "content",
 					"label": "Content",
-					"default": "Most product are free<br>shipping."
+					"default": "Freeship over oder $100"
 				},
                 {
                   "type": "image_picker",

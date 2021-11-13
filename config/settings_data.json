@@ -1335,8 +1335,8 @@
             "settings": {
               "show_service_img": true,
               "service_icon": "",
-              "title": "Free Shipping",
-              "content": "Product are free shipping.",
+              "title": "Free Shipping Worldwide",
+              "content": "Freeship over oder $100",
               "service_bg_color": "#ffffff",
               "ft_title_color": "#242424",
               "ft_content_color": "#757575"
@@ -1347,8 +1347,8 @@
             "settings": {
               "show_service_img": true,
               "service_icon": "",
-              "title": "Customer Support",
-              "content": "24x7 Customer Support",
+              "title": "Support 24/7",
+              "content": "Contact us 24 hours a day",
               "service_bg_color": "#ffffff",
               "ft_title_color": "#242424",
               "ft_content_color": "#757575"
@@ -1359,20 +1359,8 @@
             "settings": {
               "show_service_img": true,
               "service_icon": "",
-              "title": "Secure Payment",
-              "content": "Most Secure Payment.",
-              "service_bg_color": "#ffffff",
-              "ft_title_color": "#242424",
-              "ft_content_color": "#757575"
-            }
-          },
-          "6089bc06-96ca-4833-801f-4f316bf8a431": {
-            "type": "service",
-            "settings": {
-              "show_service_img": true,
-              "service_icon": "",
-              "title": "Easy Return",
-              "content": "Easy Return For 7 Days",
+              "title": "100% Secure Payment",
+              "content": "Your payment are safe with us.",
               "service_bg_color": "#ffffff",
               "ft_title_color": "#242424",
               "ft_content_color": "#757575"
@@ -1674,8 +1662,8 @@
             "settings": {
               "show_service_img": true,
               "service_img": "",
-              "title": "Free Shipping",
-              "content": "Most product are free<br>shipping."
+              "title": "Free Shipping Worldwide",
+              "content": "Freeship over oder $100"
             }
           },
           "1575460796023": {
@@ -1683,8 +1671,8 @@
             "settings": {
               "show_service_img": true,
               "service_img": "",
-              "title": "Free Shipping",
-              "content": "Most product are free<br>shipping."
+              "title": "Free Shipping Worldwide",
+              "content": "Freeship over oder $100"
             }
           },
           "1575460800579": {
@@ -1692,8 +1680,8 @@
             "settings": {
               "show_service_img": true,
               "service_img": "",
-              "title": "Free Shipping",
-              "content": "Most product are free<br>shipping."
+              "title": "Free Shipping Worldwide",
+              "content": "Freeship over oder $100"
             }
           }
         },
@@ -2076,8 +2064,8 @@
             "settings": {
               "content_align": "left",
               "content_animation": "fadeInLeft",
-              "title1": "Looky eye E5001",
-              "description": "Lorem Ipsum is simply dummy text of the <br> printing and typesetting industry.",
+              "title1": "NEW ARRIVAL",
+              "description": "There are many variations of passages of Lorem Ipsum availables, but the majority have suffered alteration in some form.",
               "btn": "SHOP NOW",
               "show_icon": true,
               "btn_url": "shopify:\/\/collections\/all",
@@ -2109,8 +2097,8 @@
             "settings": {
               "content_align": "left",
               "content_animation": "fadeInLeft",
-              "title1": "Looky eye E5001",
-              "description": "Lorem Ipsum is simply dummy text of the <br> printing and typesetting industry.",
+              "title1": "NEW ARRIVAL",
+              "description": "There are many variations of passages of Lorem Ipsum availables, but the majority have suffered alteration in some form.",
               "btn": "SHOP NOW",
               "show_icon": true,
               "btn_url": "shopify:\/\/collections\/all",
