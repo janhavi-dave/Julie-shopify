@@ -13,7 +13,11 @@
               <img src="{{ block.settings.logo | img_url: 'medium' }}" alt="{{ image.alt }}">
             </a>
             {%- endif -%}
-
+            {%- if block.settings.title != '' -%}
+            <div class="footer-title">
+              <h3>{{ block.settings.title }}</h3>
+            </div>
+            {%- endif -%}
            
             <div class="subscribe-style">
               {%- if block.settings.content != '' -%}
@@ -428,6 +432,12 @@
 					"type": "image_picker",
 					"id": "logo",
 					"label": "Image"
+				},
+        {
+					"type": "text",
+					"id": "title",
+					"label": "Title",
+					"default": "NEWSLETTER"
 				},
 				{
 					"type": "textarea",

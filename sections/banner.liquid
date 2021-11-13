@@ -61,7 +61,7 @@
   
   
   
-  <div class="{% if section.settings.section_width == 'full_width' %}container-fluid {% elsif section.settings.section_width == 'box_width' %}container-fluid section-padding-1{% elsif section.settings.section_width == 'default' %}container default {% endif %}">
+  <div class="{% if section.settings.section_width == 'full_width' %}container{% elsif section.settings.section_width == 'box_width' %}container section-padding-1{% elsif section.settings.section_width == 'default' %}container default {% endif %}">
     
  	<div class="{% if section.settings.tab_arsoule_active %} banner-slider-active carsoule_arrow_style {% endif %}row {% if section.settings.no_gutter_enable %}no_gutter{% endif %}" {{ data_slick_activation }}>
       
