@@ -48,6 +48,15 @@
   <div class="ht-product-countdown" data-countdown="{{ count_down_final }}"></div>
 </div>
 {%- endif -%}
+<div class="product-single__description rte" itemprop="description">
+  {{ product.description }}
+</div>
+
+<div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+
+{% if section.settings.show_share_buttons %}
+  {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
+{% endif %}
 
 
 {%- unless section.settings.product_description_handle == 'without_description' -%}

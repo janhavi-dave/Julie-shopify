@@ -36,20 +36,20 @@
         </div>
         {%- endif -%}
         <h4 class="ht-product-title popup_cart_title"><a href="{{ product.url | within: collection }}">{{ product.title }}</a></h4>
-        <div class="ht-product-price {{ p_content_align }}">
-          {%- if product.variants.first.compare_at_price > product.variants.first.price -%}
-          <span class="old">{{ product.variants.first.compare_at_price | money }}</span>
-          {%- endif -%}
-          <span class="new">{{ product.variants.first.price | money }}</span>
-        </div>
         {%- if settings.show_product_review -%}
         <div class="ht-product-ratting-wrap {{ p_content_align }}">
           <span class="ht-product-ratting spr-badge-caption-none">
             <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
           </span>
         </div>
-        <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
         {%- endif -%} 
+        
+        <div class="ht-product-price {{ p_content_align }}">
+          {%- if product.variants.first.compare_at_price > product.variants.first.price -%}
+          <span class="old">{{ product.variants.first.compare_at_price | money }}</span>
+          {%- endif -%}
+          <span class="new">{{ product.variants.first.price | money }}</span>
+        </div>
       </div>
       {%- include 'product-action-grid' -%}
       {%- if settings.p_count_pos == 'b_content' -%}
