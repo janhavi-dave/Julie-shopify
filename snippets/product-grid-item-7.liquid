@@ -48,6 +48,7 @@
             <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
           </span>
         </div>
+        <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
         {%- endif -%} 
       </div>
       {%- include 'product-action-grid' -%}
