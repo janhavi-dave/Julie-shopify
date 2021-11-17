@@ -3,16 +3,16 @@
 <div class="description-review-area pb-95">
   <div class="container">
     <div class="row">      
-      <div class="{% if section.settings.show_banner %}col-lg-8 col-md-8{% else %}col-lg-12 col-md-12{% endif %}">
+      <div class="{% if section.settings.show_banner %}col-lg-12 col-md-12{% else %}col-lg-12 col-md-12{% endif %}">
         <div class="description-review-wrapper">
           <div class="description-review-topbar nav">
             {%- if section.settings.des_tab_enable -%}
             <a class="active" href="#description" data-toggle="tab">{{ section.settings.des_tab_title }}</a>
             {%- endif -%}
 
-            {%- if section.settings.comment_tab_enable -%}
+            <!-- {%- if section.settings.comment_tab_enable -%}
             <a href="#comment" data-toggle="tab">{{ section.settings.comment_tab_title }}</a>
-            {%- endif -%}
+            {%- endif -%} -->
 
             {%- if section.settings.review_tab_enable -%}
             <a href="#review" data-toggle="tab">{{ section.settings.review_tab_title }}</a>
@@ -96,7 +96,7 @@
             </div>
             {%- endif -%}      
 
-            {%- if section.settings.comment_tab_enable -%}
+            <!-- {%- if section.settings.comment_tab_enable -%}
             <div id="comment" class="tab-pane fade">
               {%- if section.settings.product_page_comments_box =='disqus_comment' -%}
               {% include 'disqus-comment' %}
@@ -104,7 +104,7 @@
               {% include 'facebook-comment' %}
               {%- endif -%}
             </div>
-            {%- endif -%}            
+            {%- endif -%}             -->
             
             {%- if section.settings.review_tab_enable -%}
             <div class="tab-pane" id="review">
@@ -249,7 +249,7 @@
       </div>
 
       {%- if section.settings.show_banner -%}
-      <div class="col-lg-4 col-md-4">
+      <!-- <div class="col-lg-4 col-md-4">
         <div class="pro-dec-banner">
           <a href="{{ section.settings.banner_img_url }}">
             {%- if section.settings.banner_img -%}
@@ -259,7 +259,7 @@
             {%- endif -%}
           </a>
         </div>
-      </div>
+      </div> -->
       {%- endif -%}      
     </div>
   </div>

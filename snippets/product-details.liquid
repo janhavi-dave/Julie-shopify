@@ -52,7 +52,7 @@
   {{ product.description }}
 </div>
 
-<div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+<!-- <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div> -->
 
 {% if section.settings.show_share_buttons %}
   {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
@@ -63,7 +63,7 @@
 {%- if section.settings.product_description_handle == 'full_description' -%}
 {{ product.description | split: '[info_1]' | first | split: '[info_2]' | first | split: '[info_3]' | first | split: '[info_4]' | first | split: '[info_5]' | first | split: '[info_6]' | first | split: '[info_7]' | first | split: '[info_8]' | first | split: '[info_9]' | first | split: '[info_10]' | first | split: '[countdown]' | first | split: '[affiliate_link]' | first | split: '[product_video]' | first | split: '[short_description]' | first | split: '[product_description]' | first | split: '[more_info]' | first }}
 {%- elsif section.settings.product_description_handle == 'short_description' -%}
-<div class="product-description">
+<!-- <div class="product-description">
   {%- if product.description contains '[short_description]' -%} 
   {%- assign short_description_first = product.description | split:'[/short_description]' | first -%}
   {%- assign short_description_final = short_description_first | split:'[short_description]' | last -%}
@@ -72,7 +72,7 @@
   {%- assign truncatewords_count = section.settings.truncatewords_count_handle -%}
   <p>{{ product.description | truncatewords: truncatewords_count | split: '[short_description]' | first | split: '[product_description]' | first | split: '[new_products]' | first | split: '[product_video]' | first | split: '[affiliate_link]' | first | split: '[countdown]' | first }}</p>
   {%- endif -%}
-</div>
+</div> -->
 {%- endif -%}
 {%- endunless -%}
 
