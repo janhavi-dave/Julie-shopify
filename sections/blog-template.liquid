@@ -371,23 +371,28 @@
             }
           ]
        },
-	   {
-          "type": "menu",
-          "name": "Menu",
-          "settings": [
-            {
-              "type": "text",
-              "id": "menu_title",
-              "label": "Menu Title",
-              "default": "Custom Menu"
-            },
-			{
-              "type": "link_list",
-              "id": "menu_handle",
-              "label": "Menu"
-            }
-          ]
-       }
-	]
+      {
+        "type": "category",
+        "name": "Category",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "widget_title",
+            "label": "Title",
+            "default": "Categories"
+          },
+          {
+            "type": "range",
+            "id": "categories_list_limit_hanlde",
+            "min": 5,
+            "max": 20,
+            "step": 1,
+            "label": "Limit",
+            "default": 5
+          }
+        ]
+      }
+	 ]
   }
 {% endschema %}

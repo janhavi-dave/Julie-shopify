@@ -39,8 +39,28 @@
     </div>
   </div>
 
-  {% when 'menu' %}
+  {% when 'category' %}
   <div class="sidebar-widget">
+    {%- if block.settings.widget_title != '' -%}
+    <h4 class="pro-sidebar-title">{{ block.settings.widget_title }}</h4>
+    {%- endif -%}
+    <div class="sidebar-widget-list mb-50 mt-25">
+      <ul>
+        {% assign categories_list_limit = block.settings.categories_list_limit_hanlde %}
+        {% for c in collections limit: categories_list_limit %}
+        <li {% if collection and collection.handle == c.handle %}class="active"{% endif %} >
+          <div class="sidebar-widget-list-left">
+            <input type="checkbox"{% if collection and collection.handle == c.handle %} checked{% endif %}> <a href="{{ c.url }}">{{ c.title }} <span>{{ c.products_count }}</span></a>
+            <span class="checkmark"></span>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  {% when 'menu' %}
+  <!-- <div class="sidebar-widget">
     {%- if block.settings.menu_title != '' -%}
     <h4 class="pro-sidebar-title">{{ block.settings.menu_title }}</h4>
     {%- endif -%}
@@ -63,7 +83,7 @@
         {% endfor %}
       </ul>
     </div>
-  </div>
+  </div> -->
 
   {% when 'archive' %}
   <div class="sidebar-widget">
