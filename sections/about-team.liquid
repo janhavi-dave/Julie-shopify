@@ -85,36 +85,24 @@
               {%- if bset.member_img -%}
               <img src="{{ bset.member_img | img_url: 'master' }}" alt="{{ image.alt }}">
               {%- else -%}
-              <img src="https://via.placeholder.com/270x330" alt="placeholder-img">
+              <img src="https://via.placeholder.com/400x400" alt="placeholder-img">
               {%- endif -%}
             </a>
             <div class="team-action">
               {%- if bset.show_fb -%}
-              <a class="facebook" href="{{ bset.fb_url }}">
-                <i class="sli sli-social-facebook"></i>
-              </a>
-              {%- endif -%}
-
-              {%- if bset.show_twitter -%}
-              <a class="twitter" href="{{ bset.twitter_url }}">
-                <i class="sli sli-social-twitter"></i>
-              </a>
-              {%- endif -%}
-
-              {%- if bset.show_instagram -%}
-              <a class="instagram" href="{{ bset.instagram_url }}">
-                <i class="sli sli-social-instagram"></i>
+              <a  href="{{ bset.member_name }}">
+                <p>{{ bset.member_name }}</p>
               </a>
               {%- endif -%}
             </div>
           </div>
 
-          <div class="team-content text-center">
+          <!-- <div class="team-content text-center">
             <h4>{{ bset.member_name }}</h4>
             {%- if bset.member_desig != '' -%}
             <span>{{ bset.member_desig }}</span>
             {%- endif -%}
-          </div>
+          </div> -->
         </div>
       </div>
       {%- endcase -%}
