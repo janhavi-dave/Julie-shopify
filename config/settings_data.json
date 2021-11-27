@@ -1337,7 +1337,7 @@
               "service_icon": "",
               "title": "Free Shipping Worldwide",
               "content": "Freeship over oder $100",
-              "service_bg_color": "#ffffff",
+              "service_bg_color": "#f6f7f8",
               "ft_title_color": "#242424",
               "ft_content_color": "#757575"
             }
@@ -1349,7 +1349,7 @@
               "service_icon": "",
               "title": "Support 24/7",
               "content": "Contact us 24 hours a day",
-              "service_bg_color": "#ffffff",
+              "service_bg_color": "#f6f7f8",
               "ft_title_color": "#242424",
               "ft_content_color": "#757575"
             }
@@ -1361,7 +1361,7 @@
               "service_icon": "",
               "title": "100% Secure Payment",
               "content": "Your payment are safe with us.",
-              "service_bg_color": "#ffffff",
+              "service_bg_color": "#f6f7f8",
               "ft_title_color": "#242424",
               "ft_content_color": "#757575"
             }
@@ -1388,7 +1388,7 @@
         "settings": {
           "section_width": "box_width",
           "service_style": "style_two",
-          "service_col": "3"
+          "service_col": "4"
         }
       },
       "single-product-tab": {
@@ -1692,7 +1692,7 @@
         ],
         "settings": {
           "service_style": "style_two",
-          "service_col": "3"
+          "service_col": "4"
         }
       },
       "about-service": {
@@ -1701,7 +1701,7 @@
           "section_width": "default",
           "show_about_service": false,
           "service_style": "style_two",
-          "service_col": "3",
+          "service_col": "4",
           "ft_title_color": "#242424",
           "ft_content_color": "#757575"
         }
@@ -2062,7 +2062,7 @@
           "1581335794606-0": {
             "type": "slide",
             "settings": {
-              "content_align": "left",
+              "content_align": "center",
               "content_animation": "fadeInLeft",
               "title1": "NEW ARRIVAL",
               "description": "There are many variations of passages of Lorem Ipsum availables, but the majority have suffered alteration in some form.",
@@ -2095,7 +2095,7 @@
           "1581335794606-1": {
             "type": "slide",
             "settings": {
-              "content_align": "left",
+              "content_align": "center",
               "content_animation": "fadeInLeft",
               "title1": "NEW ARRIVAL",
               "description": "There are many variations of passages of Lorem Ipsum availables, but the majority have suffered alteration in some form.",
