@@ -87,7 +87,7 @@
     {%- endif -%}
     <div class="sidebar-widget-list mt-20">
       <ul>
-        {% assign tags = block.settings.color_picker | replace: ', ', ',' | replace: ' ,', ',' | split: ',' %}
+        <!-- {% assign tags = block.settings.color_picker | replace: ', ', ',' | replace: ' ,', ',' | split: ',' %} -->
         {% assign colors_list_limit = block.settings.colors_list_limit_hanlde %}
 
         {% for t in tags limit: colors_list_limit %}
@@ -125,23 +125,21 @@
         {% for t in tags limit: size_list_limit %}
         
         {% assign tag = t | strip %}
-        <!-- {%- if current_tags contains tag -%} -->
-        <h1>hu</h1>
+        {%- if current_tags contains tag -%}
         <li class="active">
           <div class="sidebar-widget-list-left">
-            <h1>hello</h1>
             <input type="checkbox" checked> <a href="/collections/all/{{ tag | handle }}">{{ tag }}</a>
             <span class="checkmark"></span> 
           </div>
         </li>
-        <!-- {%- elsif collection.all_tags contains tag -%}   -->
+        {%- elsif collection.all_tags contains tag -%}  
         <li>
           <div class="sidebar-widget-list-left">
             <input type="checkbox"> <a href="/collections/all/{{ tag | handle }}">{{ tag }}</a>
             <span class="checkmark"></span>
           </div>
         </li>
-        <!-- {%- endif -%} -->
+        {%- endif -%}
         {% endfor %}
       </ul>
     </div>

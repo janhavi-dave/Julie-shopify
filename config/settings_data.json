@@ -10,7 +10,7 @@
     "preloader_border_color": "#ffffff",
     "preloader_border_width": 5,
     "rtl_enable": false,
-    "color_primary": "#ff9609",
+    "color_primary": "#f76b6a",
     "typography_enable": true,
     "body_font_handle": "open_sans_n4",
     "header_font_handle": "quantico_n4",
@@ -1387,7 +1387,7 @@
         ],
         "settings": {
           "section_width": "box_width",
-          "service_style": "style_one",
+          "service_style": "style_two",
           "service_col": "3"
         }
       },
@@ -1691,8 +1691,8 @@
           "1575460800579"
         ],
         "settings": {
-          "service_style": "style_one",
-          "service_col": "4"
+          "service_style": "style_two",
+          "service_col": "3"
         }
       },
       "about-service": {
@@ -1700,8 +1700,8 @@
         "settings": {
           "section_width": "default",
           "show_about_service": false,
-          "service_style": "style_one",
-          "service_col": "4",
+          "service_style": "style_two",
+          "service_col": "3",
           "ft_title_color": "#242424",
           "ft_content_color": "#757575"
         }
@@ -2131,11 +2131,11 @@
           "1581335794606-1"
         ],
         "settings": {
-          "section_width": "default",
+          "section_width": "box_width",
           "sec_bg_color": "#effafa",
           "banner_position": "left",
-          "slider_content_col": "8",
-          "p_top": "570",
+          "slider_content_col": "12",
+          "p_top": "570",    
           "nav_style": "style_1",
           "nav_custom_style": false,
           "controlnav_color": "#1f2226",
