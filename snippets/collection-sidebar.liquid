@@ -131,7 +131,7 @@
             <span class="checkmark"></span> 
           </div>
         </li>
-        {%- elsif collection.all_tags contains tag -%}
+        {%- elsif collection.all_tags contains tag -%}  
         <li>
           <div class="sidebar-widget-list-left">
             <input type="checkbox"> <a href="/collections/all/{{ tag | handle }}">{{ tag }}</a>
